@@ -6,8 +6,9 @@ name: 🚥 Codespell
 # we prefer only to check the added/changed files for spelling errors.
 
 on:
-  pull_request:
-    types: [opened, edited, synchronize]
+  push:
+    branches:
+      - master
 
 jobs:
   codespell:
@@ -15,13 +16,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: 🔸 Get Changed Files from Pull Request
+      - name: 🔸 Get Changed Files
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           # get file names and separate them with space ' '
           #files=$(gh pr diff ${{ github.event.pull_request.number }} --name-only | xargs -I {} sh -c "echo \'./{}\'" | tr '\n' ' ')
-          gh api '/repos/gdha/www.it3.be/git/trees/master?recursive=true' -q '.tree[]|.path' | xargs -I {} sh -c 'echo ./{}' | grep '.md$' >./md_files
+          gh api '/repos/it3-be/it3.be/git/trees/master?recursive=true' -q '.tree[]|.path' | xargs -I {} sh -c 'echo ./{}' | grep '.md$' >./md_files
           echo "EXCLUDE_FILE=./md_files" >> "$GITHUB_ENV"
 
       - name: 🔸 Output the Exclude File
