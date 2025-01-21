@@ -96,7 +96,6 @@ The ReaR community also delivers support for ReaR free of charge, but no guarant
 
 * [Relax-and-Recover Documentation](https://relax-and-recover.org/documentation/)
 * [Relax-and-Recover User Guide](https://relax-and-recover.org/rear-user-guide/)
-* [rear-users mailing list](http://lists.relax-and-recover.org/mailman/listinfo/rear-users)
 * [Rear issue and/or bug tracker](https://github.com/rear/rear/issues)
 
 
