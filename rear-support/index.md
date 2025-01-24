@@ -8,15 +8,18 @@ tags: [rear, relax and recover, support, linux disaster recovery solution, IT3 C
 
 # IT3 Consultants Support Services for Rear
 
-## What is Relax-and-Recover (Rear)?
+## What is Relax-and-Recover (ReaR)?
 
 <img src="{{ site.url }}/images/logo/rear_logo_100.png" width="51" height="58" border="0" align="left" alt="Rear logo" />
-Rear stands for <strong>Re</strong>lax <strong>a</strong>nd <strong>r</strong>ecover and is a Linux Disaster Recovery framework written in bash shell.
+Rear stands for <strong>Re</strong>lax <strong>a</strong>nd <strong>R</strong>ecover and is a Linux Disaster Recovery framework written in bash shell.
 
 The code is completely free and is published with the GNU Public Licence version 3.
 
-When we said rear is a disaster recovery framework we meant each module is small and has its own specific goal. Rear creates an iso image to boot from in case of disaster and the backup can be stores practically anywhere (NFS, CIFS, USB disks, remote tape devices). Rear is also capable to integrate with open source backup solutions such as Bacula, Bareos, Borg Backup, duplicity and also with commercial backup solutions such as Tivoli, NetBackup, EMC NetWorker and Data Protector.
-IT3 Consultants is an official RedHat partner.
+When we describe Rear (Relax-and-Recover) as a disaster recovery framework, we mean that each module is designed to be small and focused on a specific task. Rear generates an ISO image that can be used to boot your system in case of a disaster, and it supports storing backups almost anywhere, including NFS, CIFS, USB drives, and remote tape devices.
+
+Additionally, Rear seamlessly integrates with open-source backup solutions like Bacula, Bareos, Borg Backup, and Duplicity, as well as with commercial backup tools such as Tivoli, NetBackup, EMC NetWorker, and Data Protector.
+
+IT3 Consultants is proud to be an official Red Hat partner.
 
 We can imagine this may sound a bit overwhelming to you, but we can help you out with the following offerings:
 
@@ -88,11 +91,11 @@ We will mail you an invoice which acts as a proof for a valid ReaR Support contr
 
 ## ReaR Consultancy
 
-We can deliver ReaR consultancy tasks remote and in-site to assist in getting started with ReaR or to write or integrate (new) plugins. Mail or call us for more information on prices.
+We offer ReaR consultancy services both remotely and on-site to help you get started with ReaR or to develop and integrate (new) plugins. Contact us via email or phone for more information about pricing.
 
 ## Free ReaR Support Services
 
-The ReaR community also delivers support for ReaR free of charge, but no guarantees of a quick answer or fix. Therefore, see our 
+The ReaR community provides free support for ReaR, but there are no guarantees of a quick response or solution. For this reason, consider our
 
 * [Relax-and-Recover Documentation](https://relax-and-recover.org/documentation/)
 * [Relax-and-Recover User Guide](https://relax-and-recover.org/rear-user-guide/)
