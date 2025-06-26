@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Us – IT3 Consultants</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f4f8fb;
+    }
+    .contact-section {
+      padding: 60px 20px;
+    }
+    .contact-card {
+      background: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    .form-control:focus {
+      border-color: #005580;
+      box-shadow: 0 0 0 0.2rem rgba(0, 85, 128, 0.25);
+    }
+    .btn-primary {
+      background-color: #0073aa;
+      border: none;
+    }
+    .btn-primary:hover {
+      background-color: #005580;
+    }
+    iframe {
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="contact-section">
+    <div class="container">
+      <div class="row g-5">
+        <!-- Contact Form -->
+        <div class="col-lg-6">
+          <div class="contact-card">
+            <h2 class="mb-4 text-primary"><i class="bi bi-envelope-fill me-2"></i>Contact Us</h2>
+            <p class="mb-4">Have a question or project in mind? Let’s talk. Fill out the form and we'll get back to you shortly.</p>
+            <form action="https://formspree.io/f/xanjlzjj" method="POST" novalidate>
+              <div class="mb-3">
+                <label for="name" class="form-label">Your Name</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+              </div>
+              <div class="mb-3">
+                <label for="subject" class="form-label">Subject</label>
+                <input type="text" class="form-control" id="subject" name="subject" required>
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Your Message</label>
+                <textarea class="form-control" id="message" name="message" rows="6" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary w-100">Send Message</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Contact Info / Map -->
+        <div class="col-lg-6">
+          <div class="contact-card">
+            <h4 class="mb-3"><i class="bi bi-geo-alt-fill me-2"></i>Our Location</h4>
+            <p>Vennestraat 15<br>B-2560 Nijlen<br>Belgium</p>
+
+            <h5 class="mt-4"><i class="bi bi-telephone-fill me-2"></i>Call Us</h5>
+            <p>+32 (498) 945-324</p>
+
+            <h5><i class="bi bi-envelope-fill me-2"></i>Email</h5>
+            <p>info@it3.be</p>
+
+            <div class="mt-4">
+	      <iframe
+		src="https://www.google.com/maps/d/embed?mid=14_Slm4hIDjALRb-elRnGsjk7aOi1d-g&ehbc=2E312F"
+                width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy">
+	      </iframe>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
