@@ -62,6 +62,7 @@
 								<li><a href="{{ site.url }}/projects/">Projects</a></li>
 								<li><a href="{{ site.url }}/blog/">Blog</a></li>
 								<li><a onclick="_gaq.push(['_trackEvent', 'GitHub', 'site'])" href="https://github.com/gdha">Open Source</a></li>
+								<li><a href="{{ site.url }}/contact/">Contact</a></li>
 							</ul>
 						</nav>
 					</div>
@@ -102,6 +103,7 @@
 								<li><a href="{{ site.url }}/company/">Company and Services</a></li>
 								<li><a href="{{ site.url }}/projects/">Projects</a></li>
 								<li><a onclick="_gaq.push(['_trackEvent', 'GitHub', 'site'])" href="https://github.com/gdha">Open Source</a></li>
+								<li><a href="{{ site.url }}/contact/">Contact Us</a></li>
 								<li class="nav-header">Recent Posts</li>
 								{% for post in site.posts limit:5 %}
 								<li><a onclick="_gaq.push(['_trackEvent', 'Recent Post', 'click', '{{ post.title }}'])" href="{{ site.url }}{{ post.url }}/">{{ post.title }}</a></li>
@@ -124,7 +126,7 @@
 						<p>IT3 Consultants was funded in 1996 and is a Belgian IT consultancy company.</p>
 					</div>
 					<div class="span3">
-						<h4>Contact Us</h4>
+						<h4><a href="{{ site.url }}/contact/">Contact Us</a></h4>
 						<a onclick="_gaq.push(['_trackEvent', 'Careers', 'email'])" href="mailto:{{ site.career_email }}">{{ site.career_email }}</a>
 					</div>
 					<div class="span3">
