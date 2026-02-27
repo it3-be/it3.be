@@ -5,7 +5,7 @@
 # The path /projects/web/it3.be is not shared from the host and is not known to Docker.
 # You can configure shared paths from Docker -> Preferences... -> Resources -> File Sharing.
 
-# docker run -it -v /projects/web/it3.be:/home/gdha/projects/web/it3.be  -v /home/gdha/.netrc:/home/gdha/.netrc \
+# docker run -it -v ~/projects/web/it3.be:/home/gdha/projects/web/it3.be  -v /home/gdha/.netrc:/home/gdha/.netrc \
 # -v /home/gdha/.gitconfig:/home/gdha/.gitconfig -v /home/gdha/.ssh:/home/gdha/.ssh \
 # -v /home/gdha/.gnupg:/home/gdha/.gnupg  --net=host jekyll
 
