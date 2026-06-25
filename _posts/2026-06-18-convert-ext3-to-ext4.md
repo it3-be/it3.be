@@ -27,7 +27,7 @@ author: gratien
   * Persistent pre-allocation (fallocate), useful for databases and media applications
   * Backward compatibility: ext4 can mount ext3 filesystems, easing migration
 
-### How to perform the actual convertion to ext4
+### How to perform the actual conversion to ext4
 
 We need two programs to be installed on the target system to speed this up:
 
@@ -36,7 +36,7 @@ We need two programs to be installed on the target system to speed this up:
 
 First of all, a ReaR rescue image must be present. If not configure ReaR to make a rescue image, therefore, check the ReaR web pages. A minimum is `rear mkrescue` to go to the next step.
 
-You need to attach the ReaR rescue imagei on the target system (and we do not need the backup of the operating system) and boot from the ISO image into the ReaR rescue shell.
+You need to attach the ReaR rescue image on the target system (and we do not need the backup of the operating system) and boot from the ISO image into the ReaR rescue shell.
 
 Once you have the rescue prompt you can check if the `convert-ext3-to-ext4` program is available in the ReaR rescue image. If this is not the case, do not worry we can still copy if from the mounted filesystem (see next step).
 
