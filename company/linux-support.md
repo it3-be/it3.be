@@ -1,34 +1,36 @@
 ---
 layout: default
-title: Linux Support
-description: An overview of the Linux support services
+title: Linux Support Services
+description: IT3 Consultants provides expert Linux support services including system administration, disaster recovery with ReaR, Open Source development, and Linux kernel expertise since 1994.
+tags: [linux, linux support, unix, open source, ReaR, relax-and-recover, system administration, IT3 Consultants, Belgium, LVM]
 author: gratien
-tags: [GNU, linux, support, IT3 Consultants, GPL]
 ---
 
 ## Linux Support Services by IT3 Consultants
 
-Since the very beginning of the Linux Operating System, a POSIX UNIX alike kernel, we have been active in this area. We have done several, lost the count, Linux installations on quite a lot of Intel based PCs, IA64 and SPARC systems. Integrating the Linux systems into your current network and systems. Using the Linux box as file server (including Samba), mail server or Web server, we have done it all.
+Since the early days of the Linux operating system — a POSIX UNIX-like kernel — IT3 Consultants has been active in this area. We have completed numerous Linux installations on Intel, IA64, and SPARC systems, integrating them into existing networks and infrastructure. From file servers (including Samba/CIFS), mail servers, and web servers, we have done it all.
 
-Gratien D'haese was one of the founders of the Linux SIG (Special Interest Group) of OTA (Open Technology Assembly) in 1994. He has been a speaker on the Linux-SIGs on several occasions.
+Gratien D'haese was one of the founders of the Linux SIG (Special Interest Group) of OTA (Open Technology Assembly) in 1994 and has spoken at Linux SIG events on several occasions.
 
 ### Key Benefits
 
-We do not claim to be the best in our field - just have a look at the presentations done in the past around Linux topics for several Linux SIGs at our [slideshare page](http://www.slideshare.net/gratien_dhaese).
+We do not claim to be the best in our field — just have a look at the presentations on Linux topics given at various Linux SIGs on our [SlideShare page](https://www.slideshare.net/gratien_dhaese).
 
-The key benefits we as a company have are the following:
+The key strengths we bring as a company:
 
- * In-depth knowledge of the Linux Operating System.
- * Years of experience in UNIX in general, and in particular, the GNU stuff which are the standard tools on Linux.
- * Capable of doing (remote) support on Linux systems.
- * A cheap and reliable solution for mission critical servers with Hardware RAID or Software RAID. On top of that we use reliable filesystems like ReiserFS, JFS, xFS with LVM2 as logical volume manager.
- * Linux is a very popular Internet server for WWW, FTP, Mail, file server (SAMBA/CIFS) and even as firewall. 
- * In-depth knowledge on lots of network protocols.
- * Maintainer and main developer of several Open Source Projects in the course of the years:
-   - Lead developer and project manager of the Open Source Project [Relax and Recover (Rear)]({{ site.url }}/projects/rear/) since 2006.
-   - Main sponsor of the [Relax-and-Recover Automated Testing project]({{ site.url }}/projects/rear-automated-testing/)
-   - Maintainer of the Open Source Project [Ad-hoc Copy and Run (adhocr)]({{ site.url }}/projects/adhocr/)
-   - Maintainer of Linux distribution CD-ROMs made for the Belgian UNIX Users Group (BUUG) from 1992-1996
-   - Lead developer and project manager of the Open Source Project [Make CD-ROM Recovery (mkCDrec)]({{ site.url }}/projects/mkcdrec/) since 2000. Mkcdrec is since 2012 not actively developed anymore as we have put our effort into rear. Mkcdrec has been retired as a project.
-   - Maintainer of the Open Source Project [mkCDrec Utilities](http://mkcdrec.sourceforge.net/utilities.html) since 2001 (Retired project).
-   - Overview of all my [Open Source projects kept on GitHub](https://github.com/gdha?tab=repositories)
+ * In-depth knowledge of the Linux operating system from kernel internals to application layer.
+ * Decades of experience in UNIX in general, and the GNU toolchain in particular.
+ * Remote and on-site support for Linux systems.
+ * Reliable, cost-effective solutions for mission-critical servers using Hardware RAID or Software RAID with LVM2, and modern filesystems such as ext4, XFS, and Btrfs.
+
+   > **Note:** ReiserFS was marked obsolete in Linux 5.19 (2023) and was [fully removed in Linux kernel 6.13](https://linuxiac.com/reiserfs-reaches-its-final-chapter/) (January 2025). JFS is in maintenance-only mode. For new deployments, ext4 or XFS are the recommended choices.
+
+ * Linux as an internet server platform — HTTP, FTP, mail, file sharing (Samba/CIFS), and firewall.
+ * In-depth knowledge of networking protocols (TCP/IP, DNS, LDAP, SMTP, NFS, and more).
+ * Maintainer and lead developer of several Open Source projects over the years:
+   - Lead developer and project manager of [Relax-and-Recover (ReaR)]({{ site.url }}/projects/rear/) since 2006 — the de facto standard bare metal disaster recovery framework on Linux.
+   - Main sponsor of the [ReaR Automated Testing project]({{ site.url }}/projects/rear-automated-testing/).
+   - Maintainer of [Ad-hoc Copy and Run (adhocr)]({{ site.url }}/projects/adhocr/) (archived).
+   - Maintainer of Linux distribution CD-ROMs for the Belgian UNIX Users Group (BUUG) from 1992–1996.
+   - Lead developer of [Make CD-ROM Recovery (mkCDrec)]({{ site.url }}/projects/mkcdrec/) since 2000. mkCDrec has been retired; effort was redirected to ReaR from 2012 onward.
+   - Overview of all Open Source contributions on [GitHub](https://github.com/gdha?tab=repositories).

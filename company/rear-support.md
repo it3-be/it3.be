@@ -1,78 +1,80 @@
 ---
 layout: default
-title: Relax-and-Recover (rear) support
-description: An overview of the support services around rear
+title: ReaR Support Services — Relax-and-Recover
+description: IT3 Consultants offers professional ReaR (Relax-and-Recover) support contracts, workshops, and disaster recovery consulting for Linux environments. Author-backed support since 2006.
+tags: [rear, relax-and-recover, linux disaster recovery, disaster recovery, support contracts, IT3 Consultants, bare metal recovery, GPL, linux]
 author: gratien
-tags: [rear, relax and recover, linux disaster recovery solution, IT3 Consultants, GPL]
 ---
 
 # IT3 Consultants Support Service for ReaR
 
 ## What is Relax-and-Recover (ReaR)?
 
-<img src="{{ site.url }}/images/logo/rear_logo_100.png" width="51" height="58" border="0" align="left" alt="Rear logo" />
-Rear stands for <strong>Re</strong>lax <strong>a</strong>nd <strong>R</strong>ecover and is a Linux Disaster Recovery framework written in bash shell language.
+<img src="{{ site.url }}/images/logo/rear_logo_100.png" width="51" height="58" border="0" align="left" alt="ReaR logo" />
 
-We have a dedicated web site on rear at [http://relax-and-recover.org/](http://relax-and-recover.org/)
+ReaR stands for **Re**lax **a**nd **R**ecover and is a Linux disaster recovery framework written in Bash. It is the de facto standard for bare metal disaster recovery on Linux.
 
-The code is completely free and is published with the GNU Public Licence version 2. We're very proud that ReaR has become part of the Fedora, RHEL and OpenSuSe distributions.  That shows that the code become quite mature and has proven to be very stable.
+The official ReaR website is at [https://relax-and-recover.org/](https://relax-and-recover.org/).
 
-When we said ReaR is a disaster recovery framework we meant each module is small and has its own specific goal. ReaR creates an ISO image to boot from in case of disaster and the backup can be stores practically anywhere (NFS, CIFS, USB disks, remote tape devices). We go even one step further and offer to integrate with commercial backup solutions such as Tivoli, NetBackup and Data Protector. More important are the integrations with Open Source backup software such as Bareos, Bacula, Borg Backup and duplicity.
+The code is completely free, published under the GNU General Public Licence version 2. ReaR ships natively in Fedora, RHEL, openSUSE, SUSE Linux Enterprise, Ubuntu, Debian, and other major distributions — evidence of its maturity and stability.
 
-We can imagine this may sound a bit overwhelming to you, but we can help you out with offering services around ReaR.
+ReaR is a modular framework: each module has a specific, focused purpose. It creates a bootable ISO image for disaster recovery and can store backups to virtually any target (NFS, CIFS, USB, remote tape, S3-compatible object storage). It integrates with commercial backup solutions (IBM Spectrum Protect/Tivoli, Veritas NetBackup, Micro Focus Data Protector) as well as Open Source backup tools (Bareos, Bacula, Borg Backup, duplicity). The latest stable release is **ReaR v2.9** (January 2025).
 
-## Relax-and-Recover (ReaR) Support Services
+## ReaR Support Services
 
-* helping you with writing and implementing a disaster recovery policy within your company
-* setting up and configuring rear as a central disaster recovery solution
-* building a Proof-of-Concept set-up to convince your higher management
-* help you with coding missing components within rear (ask us if you're unsure)
-* write the integration modules for external (open source or commercial) backup solutions
-* troubleshooting an existing disaster recovery solution based on ReaR
-* migrate disaster recovery solutions based on mkCDrec towards ReaR
-* help you writing a disaster recovery manuals based on ReaR of course
-* give training sessions to your operational teams
-* provide back-end support services (hourly based, month or year contracts possible too)
-* software support contracts for any (older) ReaR version
-* software maintenance contracts for smooth upgrades (including test cases)
-* integrating new GNU/Linux distributions into the ReaR Automated Testing project
-* IT3 Consultants is an official RedHat partner and you'll find a web page on rear on their [partner website](http://redhat.force.com/finder/PFPartnerDetail?id=0016000000M8PW4AAN)
+ * Helping you write and implement a disaster recovery policy within your company
+ * Setting up and configuring ReaR as a central disaster recovery solution
+ * Building a Proof-of-Concept to convince management
+ * Coding missing components within ReaR (ask us if you are unsure)
+ * Writing integration modules for external backup solutions (Open Source or commercial)
+ * Troubleshooting an existing disaster recovery solution based on ReaR
+ * Migrating legacy disaster recovery solutions (mkCDrec and others) to ReaR
+ * Writing disaster recovery manuals based on ReaR
+ * Training sessions for your operational teams
+ * Back-end support services (hourly, monthly, or annual contracts)
+ * Software support contracts for any ReaR version (including older releases)
+ * Software maintenance contracts for smooth upgrades (including test cases)
+ * Integrating new GNU/Linux distributions into the [ReaR Automated Testing project]({{ site.url }}/projects/rear-automated-testing/)
 
-Above list are paid services and are delivered by IT3 Consultants' author of ReaR (Gratien D'haese)
+All services listed above are paid engagements, delivered by the author of ReaR: Gratien D'haese of IT3 Consultants.
 
-## ReaR Support Contracts available
+## ReaR Support Contracts
 
-* Quickstart (REAR-Q)
-* Standard (REAR-S)
-* Advanced (REAR-A)
-* Business (REAR-B)
-* Enterprise (REAR-E)
-* Unlimited (REAR-U)
+| Contract | Code |
+|----------|------|
+| Quickstart | REAR-Q |
+| Standard | REAR-S |
+| Advanced | REAR-A |
+| Business | REAR-B |
+| Enterprise | REAR-E |
+| Unlimited | REAR-U |
 
-For more information please [have a look at]({{ site.url }}/company/rear-support/).
+For pricing and details please [contact us]({{ site.url }}/contact/).
 
-## Free ReaR Support Services
+## Free ReaR Community Support
 
-However, the ReaR community also delivers support for rear free of charge, but no guarantee of quick answers or fixes. Therefore, see our [rear-users mailing list](http://lists.relax-and-recover.org/mailman/listinfo/rear-users) and [issue tracker](https://github.com/rear/rear/issues)
+The ReaR community also provides free support, though without guaranteed response times or fix commitments:
+
+ * [rear-users mailing list](https://lists.relax-and-recover.org/mailman/listinfo/rear-users)
+ * [GitHub issue tracker](https://github.com/rear/rear/issues)
 
 ## ReaR Workshops
 
-We organize on request ReaR workshops in our offices or at customer's location. The workshop content is customer detailored and contains plenty of lab exercises. An example of such workshop agenda could be:
+We organise ReaR workshops on request, held at our offices or at your location. Content is tailored to your environment and includes lab exercises. A typical workshop agenda:
 
--	Introduction to ReaR
--	How to set it up and configure it
--	Design a Disaster Recovery Plan for your environment
--	Understand the basic settings
--	Security considerations
--	Lab 1: Set it up in our lab environment
--	Complex configurations and possibilities
--	Lab2: make a rescue image and boot from it
--	Understanding the Disaster Recovery Process of a server
--	Lab 3: make a backup of the server with rear and do a recovery on a virtual machine
--	Disaster Recovery as a Service
--	Lab 4: making a central depot of rescue images
--	Lab 5: disaster recovery and the Cloud
--	Wrap up and Frequently Asked Questions
+ - Introduction to ReaR
+ - Setup and configuration
+ - Designing a Disaster Recovery Plan for your environment
+ - Understanding the core configuration options
+ - Security considerations
+ - Lab 1: Set it up in the lab environment
+ - Complex configurations and advanced possibilities
+ - Lab 2: Create a rescue image and boot from it
+ - Understanding the full disaster recovery process
+ - Lab 3: Full backup and recovery on a virtual machine
+ - Disaster Recovery as a Service
+ - Lab 4: Building a central depot of rescue images
+ - Lab 5: Disaster recovery and the cloud
+ - Wrap-up and Q&A
 
-
-On regular basis we do a free workshop at conferences, such as the one we organized at [LinuxTag 2012](http://www.linuxtag.org/2012/de/program/workshops/workshops/vortragsdetails-talkid701.html)
+We also present ReaR at open source conferences on a regular basis. [Contact us]({{ site.url }}/contact/) to discuss a workshop for your team.

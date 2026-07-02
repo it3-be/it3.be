@@ -2,45 +2,63 @@
 layout: post
 title: Converting EXT3 file systems to EXT4 with the help of ReaR
 
-description: Converting EXT3 file systems to EXT4 with the help of ReaR
+description: Learn how to safely convert all EXT3 file systems to EXT4 on a running Linux server using ReaR mountonly and the convert-ext3-to-ext4 tool — without a full reinstall.
 
-tags: [rear, ext3, ext4, it3 consultants, Linux]
+tags: [rear, ext3, ext4, tune2fs, e2fsck, lvm, filesystem migration, disaster recovery, it3 consultants, linux]
 author: gratien
 ---
 
-<strong>Converting EXT3 file systems to EXT4 with the help of ReaR</strong>
+Many enterprise Linux servers — especially those installed years ago on RHEL/CentOS — still run ext3 file systems. Migrating to ext4 in-place, without a reinstall, is possible but requires care: the root and boot partitions cannot be unmounted while the system is live. This post shows how to do it safely using [Relax-and-Recover (ReaR)](https://relax-and-recover.org) and the companion [convert-ext3-to-ext4](https://github.com/gdha/convert-ext3-to-ext4) tool.
 
-### Ext4 offers several meaningful improvements over ext3
+> **Warning:** The `tune2fs` conversion enables ext4 feature flags and updates the superblock, but existing data blocks are **not** rewritten to use extents. Full extent-based benefits (reduced fragmentation, better large-file performance) apply only to newly written data after conversion. For workloads where that matters, a backup-and-reformat approach gives better results. Always take a backup before proceeding.
 
-* Performance
-  * Larger maximum file and filesystem sizes (ext4 supports up to 1 exabyte volumes vs ext3's 32TB)
-  * Faster fsck (filesystem check) since ext4 doesn't check unallocated blocks
+### Why upgrade from ext3 to ext4?
+
+* **Performance**
+  * Larger maximum file and filesystem sizes (ext4 supports up to 1 exabyte volumes vs ext3's 32 TB)
+  * Faster `fsck` since ext4 skips unallocated blocks
   * Delayed allocation and multiblock allocation reduce fragmentation and improve write throughput
 
-* Reliability
+* **Reliability**
   * Extents replace the old block mapping scheme, reducing metadata overhead and fragmentation for large files
   * Journal checksumming reduces the chance of corruption during crashes
   * Better handling of large directories (HTree indexing)
 
-* Features
+* **Features**
   * Timestamps with nanosecond precision (ext3 only had 1-second resolution)
-  * Persistent pre-allocation (fallocate), useful for databases and media applications
+  * Persistent pre-allocation (`fallocate`), useful for databases and media applications
   * Backward compatibility: ext4 can mount ext3 filesystems, easing migration
 
-### How to perform the actual conversion to ext4
+### Prerequisites
 
-We need two programs to be installed on the target system to speed this up:
+Two tools must be available on the target system:
 
-- Relax-and-Recover (ReaR)
-- convert-ext3-to-ext4
+- **[Relax-and-Recover (ReaR)](https://relax-and-recover.org/download/)** — v2.9 or later recommended (current stable release as of January 2025)
+- **[convert-ext3-to-ext4](https://github.com/gdha/convert-ext3-to-ext4)** — installed to `/usr/sbin/` on the target system
 
-First of all, a ReaR rescue image must be present. If not configure ReaR to make a rescue image, therefore, check the ReaR web pages. A minimum is `rear mkrescue` to go to the next step.
+A ReaR rescue ISO must already exist. If you haven't created one yet, run:
 
-You need to attach the ReaR rescue image on the target system (and we do not need the backup of the operating system) and boot from the ISO image into the ReaR rescue shell.
+```bash
+rear mkrescue
+```
 
-Once you have the rescue prompt you can check if the `convert-ext3-to-ext4` program is available in the ReaR rescue image. If this is not the case, do not worry we can still copy if from the mounted filesystem (see next step).
+This creates a bootable ISO that includes the system's disk layout. No full data backup is required for this procedure — only the rescue image.
 
-Then, run `rear -v mountonly`:
+### Step 1 — Boot into the ReaR rescue environment
+
+Attach the ReaR rescue ISO to the target system (virtual media, USB, or physical disc) and boot from it. You will land at the ReaR rescue shell prompt.
+
+Check whether `convert-ext3-to-ext4` was included in the rescue image:
+
+```bash
+ls /usr/sbin/convert-ext3-to-ext4
+```
+
+If it is missing, don't worry — you will copy it from the mounted filesystem in Step 3.
+
+### Step 2 — Mount the target filesystems with `rear mountonly`
+
+`rear mountonly` reassembles the disk layout (LVM, partitions, etc.) and mounts the filesystems under `/mnt/local` — without restoring any data. This gives you a safe, offline view of the system to work on.
 
 ```bash
 # rear -v mountonly
@@ -121,17 +139,28 @@ Exiting rear mountonly (PID 714) and its descendant processes ...
 Running exit tasks
 ```
 
-So far so good, check with `df` all file systems are present (with prefix `/mnt/local/`).
-
-When the `convert-ext3-to-ext4` program was not available in the ReaR image you better copied it from the mount file systems to `/tmp`:
+Verify all expected filesystems are visible under `/mnt/local` before continuing:
 
 ```bash
-cp /mnt/local/usr/sbin/convert-ext3-to-ext4  /tmp
+df -hT | grep /mnt/local
 ```
 
-Now, you can run the `/tmp/convert-ext3-to-ext4` program to perform its task it was designed for:
+You should see every partition listed with its mount point prefixed by `/mnt/local/`. If anything is missing, investigate before proceeding.
+
+### Step 3 — Make `convert-ext3-to-ext4` available
+
+If the tool was not bundled in the rescue image, copy it from the now-mounted system:
 
 ```bash
+cp /mnt/local/usr/sbin/convert-ext3-to-ext4 /tmp
+chmod +x /tmp/convert-ext3-to-ext4
+```
+
+### Step 4 — Run the conversion
+
+```text
+# /tmp/convert-ext3-to-ext4
+
 ***********************************************************************************
 * Program: convert-ext3-to-ext4
 * Purpose: With the help of 'rear mountonly' (after booting via the ReaR ISO image)
@@ -160,188 +189,7 @@ Pass 5: Checking group summary information
 /dev/sda1: 370/32768 files (13.0% non-contiguous), 61504/131072 blocks
 Perform unmount of all filesystems under /mnt/local
 ------------------------------------------------------
-*** Converting device /dev/mapper/vg02-lvoraclnt on file system
-/mnt/local/oracle/client
-* Convert EXT3 to EXT4 on device /dev/mapper/vg02-lvoraclnt
-tune2fs 1.45.6 (20-Mar-2020)
-* Perform a file system check on /dev/mapper/vg02-lvoraclnt
-e2fsck 1.45.6 (20-Mar-2020)
-Pass 1: Checking inodes, blocks, and sizes
-Pass 2: Checking directory structure
-Pass 3: Checking directory connectivity
-Pass 3A: Optimizing directories
-Pass 4: Checking reference counts
-Pass 5: Checking group summary information
-/dev/mapper/vg02-lvoraclnt: ***** FILE SYSTEM WAS MODIFIED *****
-/dev/mapper/vg02-lvoraclnt: 11/1310720 files (0.0% non-contiguous), 126322/5242624
-blocks
-* Change FStype to ext4 of File System /oracle/client in /mnt/local/etc/fstab
-------------------------------------------------------
-*** Converting device /dev/mapper/vg01-lvusrsapmnt on file system
-/mnt/local/sapmnt/A31
-* Convert EXT3 to EXT4 on device /dev/mapper/vg01-lvusrsapmnt
-tune2fs 1.45.6 (20-Mar-2020)
-* Perform a file system check on /dev/mapper/vg01-lvusrsapmnt
-e2fsck 1.45.6 (20-Mar-2020)
-Pass 1: Checking inodes, blocks, and sizes
-Pass 2: Checking directory structure
-Pass 3: Checking directory connectivity
-Pass 3A: Optimizing directories
-Pass 4: Checking reference counts
-Pass 5: Checking group summary information
-/dev/mapper/vg01-lvusrsapmnt: ***** FILE SYSTEM WAS MODIFIED *****
-/dev/mapper/vg01-lvusrsapmnt: 1052/5242880 files (65.7% non-contiguous),
-1230053/5242880 blocks
-* Change FStype to ext4 of File System /sapmnt/A31 in /mnt/local/etc/fstab
-------------------------------------------------------
-*** Converting device /dev/mapper/vg01-lvusrsap on file system /mnt/local/usr/sap
-* Convert EXT3 to EXT4 on device /dev/mapper/vg01-lvusrsap
-tune2fs 1.45.6 (20-Mar-2020)
-* Perform a file system check on /dev/mapper/vg01-lvusrsap
-e2fsck 1.45.6 (20-Mar-2020)
-Pass 1: Checking inodes, blocks, and sizes
-Pass 2: Checking directory structure
-Pass 3: Checking directory connectivity
-Pass 3A: Optimizing directories
-Pass 4: Checking reference counts
-Pass 5: Checking group summary information
-/dev/mapper/vg01-lvusrsap: ***** FILE SYSTEM WAS MODIFIED *****
-/dev/mapper/vg01-lvusrsap: 4661/7864320 files (18.5% non-contiguous),
-1552932/7864320 blocks
-* Change FStype to ext4 of File System /usr/sap in /mnt/local/etc/fstab
-------------------------------------------------------
-*** Converting device /dev/mapper/vg00-lv_audit on file system
-/mnt/local/var/log/audit
-* Convert EXT3 to EXT4 on device /dev/mapper/vg00-lv_audit
-tune2fs 1.45.6 (20-Mar-2020)
-* Perform a file system check on /dev/mapper/vg00-lv_audit
-e2fsck 1.45.6 (20-Mar-2020)
-Pass 1: Checking inodes, blocks, and sizes
-Pass 2: Checking directory structure
-Pass 3: Checking directory connectivity
-Pass 3A: Optimizing directories
-Pass 4: Checking reference counts
-Pass 5: Checking group summary information
-/dev/mapper/vg00-lv_audit: ***** FILE SYSTEM WAS MODIFIED *****
-/dev/mapper/vg00-lv_audit: 16/262144 files (37.5% non-contiguous), 57560/1048576
-blocks
-* Change FStype to ext4 of File System /var/log/audit in /mnt/local/etc/fstab
-------------------------------------------------------
-*** Converting device /dev/mapper/vg00-lv_log on file system /mnt/local/var/log
-* Convert EXT3 to EXT4 on device /dev/mapper/vg00-lv_log
-tune2fs 1.45.6 (20-Mar-2020)
-* Perform a file system check on /dev/mapper/vg00-lv_log
-e2fsck 1.45.6 (20-Mar-2020)
-Pass 1: Checking inodes, blocks, and sizes
-Pass 2: Checking directory structure
-Pass 3: Checking directory connectivity
-Pass 3A: Optimizing directories
-Pass 4: Checking reference counts
-Pass 5: Checking group summary information
-/dev/mapper/vg00-lv_log: ***** FILE SYSTEM WAS MODIFIED *****
-/dev/mapper/vg00-lv_log: 772/262144 files (59.1% non-contiguous), 319868/1048576
-blocks
-* Change FStype to ext4 of File System /var/log in /mnt/local/etc/fstab
-------------------------------------------------------
-*** Converting device /dev/mapper/vg00-lv_var on file system /mnt/local/var
-* Convert EXT3 to EXT4 on device /dev/mapper/vg00-lv_var
-tune2fs 1.45.6 (20-Mar-2020)
-* Perform a file system check on /dev/mapper/vg00-lv_var
-e2fsck 1.45.6 (20-Mar-2020)
-Pass 1: Checking inodes, blocks, and sizes
-Pass 2: Checking directory structure
-Pass 3: Checking directory connectivity
-Pass 3A: Optimizing directories
-Pass 4: Checking reference counts
-Pass 5: Checking group summary information
-/dev/mapper/vg00-lv_var: ***** FILE SYSTEM WAS MODIFIED *****
-/dev/mapper/vg00-lv_var: 17418/786432 files (9.1% non-contiguous), 1076561/3145728
-blocks
-* Change FStype to ext4 of File System /var in /mnt/local/etc/fstab
-------------------------------------------------------
-*** Converting device /dev/mapper/vg00-lv_tmp on file system /mnt/local/tmp
-* Convert EXT3 to EXT4 on device /dev/mapper/vg00-lv_tmp
-tune2fs 1.45.6 (20-Mar-2020)
-* Perform a file system check on /dev/mapper/vg00-lv_tmp
-e2fsck 1.45.6 (20-Mar-2020)
-Pass 1: Checking inodes, blocks, and sizes
-Pass 2: Checking directory structure
-Pass 3: Checking directory connectivity
-/lost+found not found. Create? yes
-Pass 3A: Optimizing directories
-Pass 4: Checking reference counts
-Pass 5: Checking group summary information
-/dev/mapper/vg00-lv_tmp: ***** FILE SYSTEM WAS MODIFIED *****
-/dev/mapper/vg00-lv_tmp: 157/458752 files (4.5% non-contiguous), 46564/1835008
-blocks
-* Change FStype to ext4 of File System /tmp in /mnt/local/etc/fstab
-------------------------------------------------------
-*** Converting device /dev/mapper/vg00-lv_tanium on file system
-/mnt/local/opt/Tanium
-* Convert EXT3 to EXT4 on device /dev/mapper/vg00-lv_tanium
-tune2fs 1.45.6 (20-Mar-2020)
-* Perform a file system check on /dev/mapper/vg00-lv_tanium
-e2fsck 1.45.6 (20-Mar-2020)
-Pass 1: Checking inodes, blocks, and sizes
-Pass 2: Checking directory structure
-Pass 3: Checking directory connectivity
-/lost+found not found. Create? yes
-Pass 3A: Optimizing directories
-Pass 4: Checking reference counts
-Pass 5: Checking group summary information
-/dev/mapper/vg00-lv_tanium: ***** FILE SYSTEM WAS MODIFIED *****
-/dev/mapper/vg00-lv_tanium: 15857/196608 files (15.7% non-contiguous),
-428180/786432 blocks
-* Change FStype to ext4 of File System /opt/Tanium in /mnt/local/etc/fstab
-------------------------------------------------------
-*** Converting device /dev/mapper/vg00-lv_opt on file system /mnt/local/opt
-* Convert EXT3 to EXT4 on device /dev/mapper/vg00-lv_opt
-tune2fs 1.45.6 (20-Mar-2020)
-* Perform a file system check on /dev/mapper/vg00-lv_opt
-e2fsck 1.45.6 (20-Mar-2020)
-Pass 1: Checking inodes, blocks, and sizes
-Pass 2: Checking directory structure
-Pass 3: Checking directory connectivity
-Pass 3A: Optimizing directories
-Pass 4: Checking reference counts
-Pass 5: Checking group summary information
-/dev/mapper/vg00-lv_opt: ***** FILE SYSTEM WAS MODIFIED *****
-/dev/mapper/vg00-lv_opt: 49247/327680 files (5.4% non-contiguous), 610335/1310720
-blocks
-* Change FStype to ext4 of File System /opt in /mnt/local/etc/fstab
-------------------------------------------------------
-*** Converting device /dev/mapper/vg00-lv_home on file system /mnt/local/home
-* Convert EXT3 to EXT4 on device /dev/mapper/vg00-lv_home
-tune2fs 1.45.6 (20-Mar-2020)
-* Perform a file system check on /dev/mapper/vg00-lv_home
-e2fsck 1.45.6 (20-Mar-2020)
-Pass 1: Checking inodes, blocks, and sizes
-Pass 2: Checking directory structure
-Pass 3: Checking directory connectivity
-Pass 3A: Optimizing directories
-Pass 4: Checking reference counts
-Pass 5: Checking group summary information
-/dev/mapper/vg00-lv_home: ***** FILE SYSTEM WAS MODIFIED *****
-/dev/mapper/vg00-lv_home: 1592/262144 files (2.5% non-contiguous), 54356/1048576
-blocks
-* Change FStype to ext4 of File System /home in /mnt/local/etc/fstab
-------------------------------------------------------
-*** Dealing with /mnt/local (root filesystem)
-* Converting /mnt/local now
-* Convert EXT3 to EXT4 on device /dev/mapper/vg00-lv_root
-tune2fs 1.45.6 (20-Mar-2020)
-* Perform a file system check on /dev/mapper/vg00-lv_root
-e2fsck 1.45.6 (20-Mar-2020)
-Pass 1: Checking inodes, blocks, and sizes
-Pass 2: Checking directory structure
-Pass 3: Checking directory connectivity
-Pass 3A: Optimizing directories
-Pass 4: Checking reference counts
-Pass 5: Checking group summary information
-/dev/mapper/vg00-lv_root: ***** FILE SYSTEM WAS MODIFIED *****
-/dev/mapper/vg00-lv_root: 198626/524288 files (5.6% non-contiguous),
-1541871/2097152 blocks
-* Change FStype to ext4 of File System / in /mnt/local/etc/fstab
+...
 *** Remounting all file systems with EXT4
 *** Proof that file systems are now mounted as EXT4
 /dev/mapper/vg00-lv_root on /mnt/local type ext4 (rw,relatime)
@@ -354,7 +202,6 @@ Pass 5: Checking group summary information
 /dev/mapper/vg00-lv_tmp on /mnt/local/tmp type ext4 (rw,relatime)
 /dev/mapper/vg00-lv_opt on /mnt/local/opt type ext4 (rw,relatime)
 /dev/mapper/vg00-lv_home on /mnt/local/home type ext4 (rw,relatime)
-/dev/mapper/vg00-lv_log on /mnt/local/var/log type ext4 (rw,relatime)
 /dev/mapper/vg00-lv_tanium on /mnt/local/opt/Tanium type ext4 (rw,relatime)
 /dev/mapper/vg00-lv_audit on /mnt/local/var/log/audit type ext4 (rw,relatime)
 --------------------------------------------------------------
@@ -364,14 +211,37 @@ Temporary helper file: /tmp/mountme
 Done.
 ```
 
-And, now you can reboot into the real target system (perhaps you need to run `eject /dev/crom` before you can umount the ISO image).
+The tool runs `tune2fs -O extents,uninit_bg,dir_index,has_journal` on each device to enable ext4 features, then `e2fsck` to verify consistency, and finally updates `/etc/fstab` entries from `ext3` to `ext4`. At the end it remounts everything and confirms the new filesystem type.
 
-As a  result all previous EXT3 file systems are now of type EXT4 with a slighter better performance and realibilty.
+> **Note:** The line `File system(s) still defined as ext3 in /mnt/local/etc/fstab:` followed by nothing means the tool found no remaining ext3 entries — the fstab update was successful. If any are listed there, manually edit `/mnt/local/etc/fstab` before rebooting.
 
-Have fun.
+### Step 5 — Verify fstab and reboot
+
+Double-check the fstab has no remaining `ext3` entries:
+
+```bash
+grep ext3 /mnt/local/etc/fstab
+```
+
+No output means you are clean. Then eject the rescue media and reboot:
+
+```bash
+eject /dev/cdrom
+reboot
+```
+
+After the system comes back up, confirm the live filesystems:
+
+```bash
+df -hT | grep ext
+```
+
+All partitions should now show `ext4` in the type column.
 
 ### References
 
-- [Relax-and-Recover (ReaR)](https://github.com/rear/rear)
-
-- [convert-ext3-to-ext4](https://github.com/gdha/convert-ext3-to-ext4)
+- [Relax-and-Recover (ReaR) — GitHub](https://github.com/rear/rear)
+- [ReaR Download & Release Notes (v2.9, January 2025)](https://relax-and-recover.org/download/)
+- [convert-ext3-to-ext4 — GitHub](https://github.com/gdha/convert-ext3-to-ext4)
+- [ext3 to ext4 conversion — unix.stackexchange.com](https://unix.stackexchange.com/questions/126708/converting-a-filesystem-from-ext3-to-ext4)
+- [EXT4 vs EXT3 — dev.to](https://dev.to/adityabhuyan/the-advantages-and-disadvantages-of-ext4-vs-ext3-in-linux-systems-4pcp)

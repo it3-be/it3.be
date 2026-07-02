@@ -1,65 +1,71 @@
 ---
 layout: default
-title: Config to HTML (cfg2html) project
-description: Project cfg2html sponsored by IT3 Consultants
+title: Config to HTML (cfg2html) — System Configuration Collector
+description: cfg2html is an Open Source Unix/Linux shell utility that collects system configuration into a readable HTML and plain-text report — useful for disaster recovery, audits, and pre-upgrade planning.
+tags: [cfg2html, open source, linux, HP-UX, AIX, SunOS, system configuration, disaster recovery, sysadmin, IT3 Consultants, GPL]
 author: gratien
-tags: [cfg2html, open source, korn shell script, HP-UX, SunOS, AIX, Linux, IT3 Consultants, GPL]
 ---
-## Config to HTML (cfg2html) project
 
-[Cfg2html](http://www.cfg2html.com/) is a little utility to collect the necessary system configuration files and system set-up to an ASCII file and HTML file. Simple to use and very helpful in disaster recovery situations.
+## Config to HTML (cfg2html)
 
-<iframe width="280" height="210" src="//www.youtube.com/embed/qqBf-VS9Gmk" align="right"><p>cfg2html</p></iframe>
+[cfg2html](https://www.cfg2html.com/) is a utility to collect system configuration files and settings into an HTML file and a plain-text file. Simple to run and very useful in disaster recovery situations, compliance audits, and pre-upgrade planning. cfg2html is often called the "Swiss army knife" for sysadmins.
 
-Collects Linux system configuration into a HTML and text file. Config to HTML is the "swiss army knife" for the sysadmins. It was written to get the necessary information to plan an update, to perform basic trouble shooting or performance analysis. As a bonus cfg2html creates a nice HTML and plain ASCII documentation from Linux System, Cron and At, installed Hardware, installed Software, Filesystems, Dump- and Swap-configuration, LVM, Network Settings, Kernel, System enhancements and Applications, Subsystems.
+<iframe width="280" height="210" src="https://www.youtube.com/embed/qqBf-VS9Gmk" align="right" title="cfg2html introduction video"><p>cfg2html</p></iframe>
 
-Cfg2html works on Linux, HP-UX, SunSO, AIX...
+It collects: Linux system information, Cron and At jobs, installed hardware, installed software, filesystem and swap configuration, LVM, network settings, kernel and modules, system enhancements, and application subsystems — all written into a self-contained HTML document you can open in any browser.
 
-The presentation given at [FOSDEM 2014](https://fosdem.org/2014/schedule/event/cfg2html/) on February 2td 2014 is available.
+cfg2html works on Linux, HP-UX, SunOS, and AIX.
 
+A [presentation at FOSDEM 2014](https://fosdem.org/2014/schedule/event/cfg2html/) is available if you want a quick overview.
 
+### Clone and run
 
-See our [GitHub Source development tree](https://github.com/cfg2html/cfg2html) and clone it to your system via:
+```bash
+git clone git@github.com:cfg2html/cfg2html.git
+```
 
-    git clone git@github.com:cfg2html/cfg2html.git
+### Example output
 
-A simple output of cfg2html looks like:
+```text
+#-> cfg2html
+--=[ https://www.cfg2html.com ]=---------------------------------------------
+Starting          cfg2html-linux version 6.x
+Path to Cfg2Html  /usr/sbin/cfg2html
+HTML Output File  /var/log/cfg2html/hostname.html
+Text Output File  /var/log/cfg2html/hostname.txt
+Errors logged to  /var/log/cfg2html/hostname.err
+Local config      /etc/cfg2html/local.conf
+WARNING           USE AT YOUR OWN RISK!!! :-))
+--=[ https://www.cfg2html.com ]=---------------------------------------------
 
-    #-> cfg2html
-    --=[ http://www.cfg2html.com ]=---------------------------------------------
-    Starting          cfg2html-linux version 6.0.1-git201307181324
-    Path to Cfg2Html  /usr/sbin/cfg2html
-    HTML Output File  /var/log/cfg2html/witsbebelnx02.html
-    Text Output File  /var/log/cfg2html/witsbebelnx02.txt
-    Partitions        /var/log/cfg2html/witsbebelnx02.partitions.save
-    Errors logged to  /var/log/cfg2html/witsbebelnx02.err
-    Local config      /etc/cfg2html/local.conf
-    Started at        2014-01-14 13:10:36
-    WARNING           USE AT YOUR OWN RISK!!! :-))           <<<<<
-    --=[ http://www.cfg2html.com ]=---------------------------------------------
-    
-    Collecting:  Linux System (SUSE Linux Enterprise Desktop 11 (x86_64))  .............................................
-    Collecting:  Cron and At  ................
-    Collecting:  Hardware  ..........................
-    Collecting:  Software  ...............
-    Collecting:  Filesystems, Dump- and Swapconfiguration  ..........
-    Collecting:  LVM  ............
-    Collecting:  Network Settings  ...................................
-    Collecting:  Kernel, Modules and Libraries  .....................
-    Collecting:  System Enhancements  ...
-    Collecting:  Applications and Subsystems  ..............
-    
-    --=[ http://www.cfg2html.com ]=---------------------------------------------
-    Returncode=1 (see /var/log/cfg2html/witsbebelnx02.err)
+Collecting:  Linux System ...
+Collecting:  Cron and At ...
+Collecting:  Hardware ...
+Collecting:  Software ...
+Collecting:  Filesystems, Dump- and Swapconfiguration ...
+Collecting:  LVM ...
+Collecting:  Network Settings ...
+Collecting:  Kernel, Modules and Libraries ...
+Collecting:  System Enhancements ...
+Collecting:  Applications and Subsystems ...
+```
 
-If you find problems, bugs and have some bright news ideas please make a new [issue](https://github.com/cfg2html/cfg2html/issues) at  our GitHub project pages.
+The output HTML file gives you a full snapshot of the system at collection time — ideal for keeping before/after evidence during patching or upgrades.
 
-HP-UX software depots of `cfg2html` are available at the [Download Page of cfg2html](https://www.cfg2html.com/)
+### Installing on HP-UX 11i
 
-To install this on HP-UX 11i systems, first download this depot and install as follow:
+HP-UX software depots are available at the [cfg2html download page](https://www.cfg2html.com/):
 
-    # swinstall -s $PWD/cfg2html_C.06.27_20151215.depot CFG2HTML
+```bash
+swinstall -s $PWD/cfg2html_C.06.27_20151215.depot CFG2HTML
+```
 
-The cfg2html packages for Linux are daily build on OpenSuSe Build Service - select your Linux versions and go deeper in the *noarch* subdirectory. See [the daily builds](http://download.opensuse.org/repositories/home:/gdha/)
+### Linux packages
 
-External link: [Cfg2html home](https://www.cfg2html.com/)
+Linux packages are built on the [openSUSE Build Service](https://build.opensuse.org/project/show/home:gdha) for a wide range of distributions. Select your distribution and look in the `noarch` subdirectory.
+
+### Links
+
+- [cfg2html official website](https://www.cfg2html.com/)
+- [cfg2html GitHub source](https://github.com/cfg2html/cfg2html)
+- [Report a bug or request a feature](https://github.com/cfg2html/cfg2html/issues)

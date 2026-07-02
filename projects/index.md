@@ -1,51 +1,47 @@
 ---
 layout: default
-title: Projects sponsored by IT3 Consultants
-description: An overview of the projects sponsored by IT3 Consultants
+title: Open Source Projects sponsored by IT3 Consultants
+description: IT3 Consultants sponsors and leads several Open Source projects including ReaR (Linux disaster recovery), cfg2html, upgrade-ux, and more — active since 1996.
+tags: [open source, ReaR, relax-and-recover, cfg2html, upgrade-ux, adhocr, mkcdrec, linux, disaster recovery, IT3 Consultants]
 author: gratien
 ---
 
 # IT3 Consultants Projects
 
-What kind of projects are we involved in? In short for customer who pay for it and open source projects. It is clear that on projects done for customers we cannot communicate much without their approval.
-
-On the following Open Source projects we can give more details.
+IT3 Consultants is involved in projects done for customers as well as a number of Open Source projects. Customer work is confidential by default; the Open Source projects below are public and we can share full details.
 
 ## Relax-and-Recover (ReaR)
 
-<img src="{{ site.url }}/images/logo/rear_logo_100.png" width="30" height="30" align="left" alt="Rear logo">
+<img src="{{ site.url }}/images/logo/rear_logo_100.png" width="30" height="30" align="left" alt="ReaR logo">
 
-[Relax-and-Recover]({{ site.url }}/projects/rear/) is an open source Disaster Recovery tool handling bare metal restores in an automated way (as much as possible). Making snapshots of your system can be done *on-line* and send over to remote storage such as NAS, CIFS, USB, Network,...
+[Relax-and-Recover]({{ site.url }}/projects/rear/) is the de facto standard bare metal disaster recovery framework on Linux, written in Bash and released under GPLv3. It automates the creation of bootable rescue images and integrates with virtually any backup solution — NFS, CIFS, USB, S3, commercial and Open Source backup tools alike.
 
 ## Relax-and-Recover (ReaR) Automated Testing
 
-[Relax-and-Recover Automated Testing]({{ site.url }}/projects/rear-automated-testing/) is an open source sub-project of ReaR dedicated to ReaR testing fully automated. This project is sponsored by customers who subscribed to one of our [ReaR Support Services]({{ site.url }}/rear-support/).
+[Relax-and-Recover Automated Testing]({{ site.url }}/projects/rear-automated-testing/) is an Open Source sub-project of ReaR dedicated to fully automated testing across distributions and hardware architectures. It is sponsored by customers who subscribe to one of our [ReaR Support Services]({{ site.url }}/rear-support/).
 
 ## Relax-and-Recover (ReaR) User Guide Documentation
 
-[Relax-and-Recover (ReaR) User Guide Documentation]({{ site.url }}/projects/rear-user-guide/) is an open source sub-project of ReaR dedicated to provide a decent ReaR User Guide for the community. A [ReaR Subscription]({{ site.url }}/projects/rear-user-guide/) buys you guaranteed time per week that we will work on the User Guide.
+[Relax-and-Recover (ReaR) User Guide Documentation]({{ site.url }}/projects/rear-user-guide/) is an Open Source sub-project providing comprehensive documentation for the ReaR community. A [ReaR Subscription]({{ site.url }}/rear-support/) buys guaranteed weekly time dedicated to improving and expanding the User Guide.
 
 ## Upgrade-UX
 
 <img src="{{ site.url }}/images/upgrade-ux.png" width="38" height="38" border="0" align="left" alt="upgrade-ux logo">
 
-[Upgrade-UX]({{ site.url }}/projects/upgrade-ux/) is an Open Source framework designed to assist the UNIX system engineer in patching or upgrading systems in a consistent and repeatable way with evidence before and after the running upgrade-ux.
-
+[Upgrade-UX]({{ site.url }}/projects/upgrade-ux/) is an Open Source framework designed to assist Unix/Linux system engineers in patching or upgrading systems in a consistent, repeatable, and auditable way — with evidence captured before and after each run.
 
 ## Config To HTML (cfg2html)
 
-[Cfg2html]({{ site.url }}/projects/cfg2html/) is a little utility to collect the necessary system configuration files and system set-up to an ASCII file and HTML file. Simple to use and very helpful in disaster recovery situations.
+[cfg2html]({{ site.url }}/projects/cfg2html/) is a utility that collects system configuration files and settings into a readable HTML and plain-text report. Simple to use and invaluable in disaster recovery situations, compliance audits, and pre-upgrade planning.
 
+## Ad-hoc Copy and Run (adhocr) — Archived
 
-## Ad-hoc Copy and Run (adhocr)
+[adhocr]({{ site.url }}/projects/adhocr/) is a small `expect`/SSH utility for parallelising command execution across many systems simultaneously. The project is archived and no longer actively developed.
 
-[adhocr]({{ site.url }}/projects/adhocr/) is a little `expect` utility to parallelize execution of commands on lots of systems.
+## WBEMextras — Archived
 
-## Wbemextras
+[wbemextras]({{ site.url }}/projects/wbemextras/) contains scripts to assist with HP SIM installation and configuration on HP-UX systems. This is a retired project; no new development is planned.
 
-[wbemextras]({{ site.url }}/projects/wbemextras/) contains some scripts to assist in HP SIM installation and configuration on HP-UX, but is in the meantime a retired project.
+## Make CD-ROM Recovery (mkCDrec) — Retired
 
-## Make CD-ROM Recovery (mkcdrec)
-
-[mkCDrec]({{ site.url }}/projects/mkcdrec/) is the predecessor project of ReaR and has been phased out in favour of [ReaR]({{ site.url }}/projects/rear/). mkCDrec is a retired project, but getting support is still possible, however no longer free of charge.
-
+[mkCDrec]({{ site.url }}/projects/mkcdrec/) is the predecessor project to ReaR and has been retired since 2012. All effort moved to [ReaR]({{ site.url }}/projects/rear/). Paid migration support from mkCDrec to ReaR is still available.

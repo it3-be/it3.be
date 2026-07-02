@@ -1,7 +1,7 @@
 ---
 layout: default
-title: IT3 Consultants
-description: The main web page of IT3 Consultants
+title: Contact IT3 Consultants
+description: Get in touch with IT3 Consultants — Belgian Unix/Linux and disaster recovery specialists. Send us a message about consulting, ReaR support, or Open Source projects.
 author: gratien
 notitle: true
 ---

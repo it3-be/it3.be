@@ -1,51 +1,49 @@
 ---
 layout: default
-title: Company and Services
-description: How We Can Help You Get What You Want
+title: How IT3 Consultants Can Help You
+description: IT3 Consultants helps with Unix/Linux system strategy, Kubernetes, disaster recovery, security, configuration management with Ansible and Chef, and Open Source development.
+tags: [unix, linux, consulting, kubernetes, disaster recovery, ansible, chef, security, IT3 Consultants, Belgium]
 author: gratien
 ---
 
 ## How We Can Help You Get What You Want
 
-IT3 Consultants can work with you to find out what is going wrong with your computers, your network, your overworked System Administrators, and your company's entire computing strategy.
-We can help you figure out where your computing environment should be heading, and work with you to take it there. We've done it for other companies, and we can do it for you!
+IT3 Consultants can work with you to find out what is going wrong with your servers, your network, your overworked system administrators, and your company's entire computing strategy.
+We can help you figure out where your computing environment should be heading, and work with you to take it there. We have done it for other companies and we can do it for you.
 
 ### Planning and Strategy Services
 
- * Project Management and Integration of Multi-Vendor Electronic Mail Systems across multiple platforms (Unix, Linux, SMTP, POP3, IMAP4, LDAP, anti-SPAM, virus scanning)
- * Internet access (PPP, cable, ADSL)
- * Equipment and user move planning
+ * Project Management and integration of multi-vendor and multi-platform systems (Unix, Linux, SMTP, IMAP, LDAP, anti-spam, virus scanning)
+ * Internet access strategy (broadband, dedicated links, cloud connectivity)
+ * Equipment and user migration planning
  * User and System Support Strategies
- * Help-desk set-up
- * Security Procedures analysis, risk analysis, writing security policies
- * Backup Strategy development
- * Capacity Planning
+ * Help-desk setup
+ * Security procedures analysis, risk analysis, writing security policies
+ * Backup strategy development
+ * Capacity planning
  * Unix SysAdmin tasks (HP-UX, Solaris, Linux)
  * Disaster Recovery Planning (HP-UX, Linux)
- * DevOps Strategy and Planning (chef, ansible)
+ * DevOps strategy and planning (Ansible, Chef)
 
 ### Configuration and Troubleshooting Services
 
- * Systems Integration of technologies for your computing environment
- * Administrating OpenShift or Rancher kubernetes environments
+ * Systems integration of technologies for your computing environment
+ * Administering OpenShift or Rancher/RKE2 Kubernetes environments
  * Configuration management with Ansible or Chef
- * Compliance Testing with Inspec
- * Performance Analysis of networks and other critical resources (HP OV Operations, HP IT/O, HP NNM, HP PerfView and HP Glance)
- * Basic Router configuration
- * Modem / UUCP / Sendmail / Electronic Mail configuration
+ * Compliance testing with InSpec
+ * Performance analysis of networks and critical resources
  * Internet access and troubleshooting (including firewall rules)
- * Network Data-Flow and Workgroup troubleshooting
- * Software and Hardware configuration and fine-tuning
+ * Network data-flow and workgroup troubleshooting
+ * Software and hardware configuration and fine-tuning
  * Cluster configuration (HP ServiceGuard) on HP-UX and Linux
  * Backup configuration (HP Data Protector, EMC NetWorker, Bareos, duplicity)
- * Disaster Recovery Design on HP-UX using Ignite/UX or on Linux using ReaR
- * [Make CD-ROM Recovery (mkCDrec)]({{ site.url }}/projects/mkcdrec/) support and migration to Rear services
- * [Relax-and-Recover (rear)]({{ site.url }}/rear-support/) support services
+ * Disaster Recovery design on HP-UX using Ignite/UX or on Linux using [ReaR]({{ site.url }}/rear-support/)
+ * [Relax-and-Recover (ReaR)]({{ site.url }}/rear-support/) support services
 
-### Writing code
+### Code Writing
 
- * Korn or Bash shell scripts for any kind of purpose
- * Ruby language (for Chef)
+ * Bash shell scripts for automation and system management
  * Python scripts
- * Write Chef Cookbooks, Ansible Playbooks or Inspec tests
- * Starting up new (open source) projects (sponsored projects - read _being paid for_)
+ * Ruby (for Chef)
+ * Chef Cookbooks, Ansible Playbooks, and InSpec tests
+ * Starting up new Open Source projects (sponsored projects — read: *paid engagements*)

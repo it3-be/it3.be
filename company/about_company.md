@@ -1,34 +1,36 @@
 ---
 layout: default
-title: About the Company
-description: About the Company
+title: About IT3 Consultants bv
+description: Contact details, company registration, VAT number, Peppol IDs and location of IT3 Consultants bv, a Belgian Unix/Linux and disaster recovery consultancy based in Nijlen.
+tags: [IT3 Consultants, contact, Belgium, company details, VAT, Peppol, Nijlen]
 author: gratien
 ---
 
 ## About the Company
 
 ### Contact IT3 Consultants bv
-<strong>Address:</strong>
 
-IT3 Consultants bv<br>
-Vennestraat 15<br>
-B-2560 Nijlen<br>
+**Address:**
+
+IT3 Consultants bv  
+Vennestraat 15  
+B-2560 Nijlen  
 Belgium
 
-<strong>Owner</strong>: Gratien D'haese
+**Owner:** Gratien D'haese
 
-<strong>Mail</strong>: gratien.dhaese@it3.be
+**Email:** [gratien.dhaese@it3.be](mailto:gratien.dhaese@it3.be)
 
-<strong>Telephone</strong>: +32 498 94 53 24
+**Telephone:** +32 498 94 53 24
 
-<strong>Ondernemingsnummer/Company number</strong>: 459426444
+**Ondernemingsnummer / Company number:** 459426444
 
-<strong>BTW/VAT number</strong>: BE 0459426444
+**BTW / VAT number:** BE 0459426444
 
-<strong>Peppol-IDs</strong>:
-<li>0208:0459426444</li>
-<li>9925:be0459426444</li>
+**Peppol IDs:**
+- 0208:0459426444
+- 9925:be0459426444
 
-### Location on map:
-<iframe src="https://www.google.com/maps/d/embed?mid=z8VrKWZke0VI.k7aXf8KGVrzA" width="450" height="300" frameborder="0" style="border:0"></iframe>
+### Location
 
+<iframe src="https://www.google.com/maps/d/embed?mid=z8VrKWZke0VI.k7aXf8KGVrzA" width="450" height="300" frameborder="0" style="border:0" title="IT3 Consultants location map"></iframe>

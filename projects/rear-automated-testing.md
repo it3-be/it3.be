@@ -1,44 +1,42 @@
 ---
 layout: default
 title: Relax-and-Recover (ReaR) Automated Testing Project
-description: An overview of the ReaR Automated Testing project sponsored by IT3 Consultants
+description: The ReaR Automated Testing project automates disaster recovery test scenarios across Linux distributions and hardware architectures to validate ReaR releases before publication.
+tags: [rear, relax-and-recover, automated testing, linux, disaster recovery, CI, open source, GPLv3, IT3 Consultants, bareos]
 author: gratien
 ---
 
 ## Relax-and-Recover (ReaR) Automated Testing
 
-<img src="{{ site.url }}/images/logo/rear_logo_100.png" width="50" height="50" alt="Rear logo">
+<img src="{{ site.url }}/images/logo/rear_logo_100.png" width="50" height="50" alt="ReaR logo">
 
-[Relax-and-Recover]({{ site.url }}/projects/rear/) is our well known open source project dealing with Disaster Recovery of bare metal GNU/Linux systems. 
-ReaR is a modular disaster recovery engine completely written in bash and released under GPL v3 license. ReaR can store the details about your systems on hard disks (network, USB, SAN,...) or network (PXE, NFS, CIFS,...) including the complete backup. It also creates a bootable image which you need to recreate your system from scratch. Furthermore, thanks to the modular concept, we can integrate rear with foreign backup solutions (commercial or not) to do the backup and restore part which makes rear very scalable in big enterprises.
-Testing such wide range of features on different GNU/Linux distributions such as:
+[Relax-and-Recover (ReaR)]({{ site.url }}/projects/rear/) is a modular bare metal disaster recovery framework written in Bash and released under GPLv3. Before each release, every supported combination of Linux distribution, hardware architecture, backup method, and boot mechanism must be validated. That is a substantial matrix:
 
- - RHEL
- - SLES
- - Debian
- - Ubuntu
- - Arch
+- **Distributions:** RHEL, SLES, Debian, Ubuntu, Fedora, Arch, and more
+- **Architectures:** x86_64, ppc64, ppc64le, ia64, aarch64
+- **Backup methods:** tar, rsync, duplicity, Bareos, and various commercial solutions
+- **Boot methods:** ISO, PXE, USB
 
-To name a few and do not forget these distributions supports also different hardware types such as x86_64, ppc64, ppc64le, ia64. Not to mention all the different combinations that are possible how to backup and recover the systems disks with different types of backup mechanism, such as tar, rsync, duplicity, bareos, and many commercial backup solutions.
+Testing this matrix manually before every release is not feasible. Disaster recovery exercises traditionally require manual intervention at each step — making automation genuinely difficult.
 
-Summary - testing is a nighmare before we can bring out a new release. We suspect that the end-users of ReaR have no clue of the amount of tests are necessary before we are convinced that a  fresh ReaR release is stable enough to set free.
-Above all, you cannot do enough tests, but doing enough tests is not possible due to limited resources (hardware), and hand labour as automating was almost not possible as a disaster recovery exercise needs manual intervention.
+### What the project does
 
-This project "[ReaR Automated Testing](https://gdha.github.io/rear-automated-testing/)" wanted to automate as much as possible for a limited set of cases. We started this project for our customers with a valid [ReaR Support contract]({{ site.url }}/rear-support/) as an additional support service. ReaR Automated Testing project is an Open Source project (license based on GPLv3) so that everybody may benefit from it and can freely use it (and/or improve/enhance).
+The [ReaR Automated Testing project](https://gdha.github.io/rear-automated-testing/) automates a targeted set of end-to-end disaster recovery scenarios: boot the rescue ISO, reconstruct disk layout, restore data, verify the system boots correctly. It was originally built for customers with an active [ReaR support contract]({{ site.url }}/rear-support/) as an additional service, and is published as Open Source (GPLv3) so the whole community can benefit and contribute.
 
-In the past, we did tests on:
+Past validated scenarios include:
 
- - CentOS 7 with PXE booting and BACKUP=NETFS (using tar and NFS)
- - Ubuntu 14.04 with ISO booting and BACKUP=BAREOS
- - Ubuntu 16.04 with ISO booting and BACKUP=BAREOS
+- CentOS 7 with PXE booting and `BACKUP=NETFS` (tar over NFS)
+- Ubuntu 14.04 with ISO booting and `BACKUP=BAREOS`
+- Ubuntu 16.04 with ISO booting and `BACKUP=BAREOS`
 
-Present time: the project is on-hold due to no funding anymore! Open Source is free as in beer, right? Free does not mean we have to work for free!
+### Current status
 
-If you would like to see your use case being automated tested you need to subscribe for one of the [ReaR support offerings]({{ site.url }}/rear-support/)
-Want to know more? Perhaps watch one of the [presentation about ReaR Automated Testing](https://media.ccc.de/v/froscon2017-1957-relax-and-recover_automated_testing).
+The project is currently on hold pending renewed funding. Open Source software is free to use, but the engineering work behind it is not free to produce. If you want your specific use case covered by automated testing, subscribe to one of the [ReaR support offerings]({{ site.url }}/rear-support/) to help fund continued development.
 
- - External link to [ReaR Automated Testing Documentation](https://gdha.github.io/rear-automated-testing/)
- - External link to [ReaR Automated Testing GitHub Sources](https://github.com/gdha/rear-automated-testing)
- - External link to [ReaR Automated Testing GitHub Issues](https://github.com/gdha/rear-automated-testing/issues)
- - External link to [Presentation at FroSCon 2017 about ReaR Automated Testing](https://media.ccc.de/v/froscon2017-1957-relax-and-recover_automated_testing)
- - External link to [Relax-and-Recover](http://relax-and-recover.org/)
+### Resources
+
+- [ReaR Automated Testing documentation](https://gdha.github.io/rear-automated-testing/)
+- [ReaR Automated Testing GitHub source](https://github.com/gdha/rear-automated-testing)
+- [ReaR Automated Testing GitHub issues](https://github.com/gdha/rear-automated-testing/issues)
+- [Presentation at FrOSCon 2017](https://media.ccc.de/v/froscon2017-1957-relax-and-recover_automated_testing) — video introduction to the project
+- [ReaR official website](https://relax-and-recover.org/)

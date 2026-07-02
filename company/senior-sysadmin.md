@@ -1,44 +1,42 @@
 ---
 layout: default
-title: Senior Unix System Administration
-description: An overview of Senior Unix System Administration possibilities
+title: Senior Unix/Linux System Administration
+description: IT3 Consultants provides senior Unix and Linux system administration on contract — HP-UX, Solaris, Linux, Kubernetes (OpenShift, RKE2, k3s), storage, clusters, and disaster recovery.
+tags: [senior sysadmin, unix, linux, HP-UX, Solaris, kubernetes, OpenShift, system administration, IT3 Consultants, disaster recovery]
 author: gratien
-tags: [senior, Unix, HP-UX, Solaris, Linux, System Administration, IT3 Consultants]
 ---
 
-# Senior Unix System Administration
+# Senior Unix/Linux System Administration
 
-If you have been looking for permanent employees for a while, then you know that Unix System Administrators looking for new job opportunities are seldom right now. On the contrary, current System Administrators are looking for none sysadmin jobs. You have projects to be completed, but your staff is already so busy that your backlog is getting huge! We can help!
+Finding experienced Unix and Linux system administrators for short-term or project-based work is genuinely hard. Your existing staff are stretched, your backlog is growing, and you have projects that need to move forward. We can help.
 
-If you need someone to work with you for 3-6 months, we can help you run your computing environment on a day-to-day basis, too. Convenient flat monthly rates available for contracts longer than 4 months.
+If you need someone to work with you for 3–6 months — or on a day-to-day basis for ongoing operations — IT3 Consultants is available on contract. Flat monthly rates are available for engagements longer than 4 months.
 
-## What experience can IT3 Consultants offer you?
+## What Experience Can IT3 Consultants Offer You?
 
  * Unix systems and Local Area Networking integration, management, consulting, and support.
- * Over 25 years of experience in communications and operating systems support and development.
- * In-depth understanding of heterogeneous computing and communications systems, Internet access and security, Unix internals, hardware/software interfaces, project management, client management, systems management and customer support.
- * MySQL and Oracle basic administration knowledge.
- * HP Serviceguard cluster configuration/installation and maintenance (on HP-UX and GNU/Linux systems), including
-   - Campus cluster
+ * Over 30 years of experience in communications, operating systems, and infrastructure support and development.
+ * In-depth understanding of heterogeneous computing environments: Internet access, security, Unix internals, hardware/software interfaces, project management, and customer support.
+ * MySQL and Oracle basic database administration.
+ * HP Serviceguard cluster configuration, installation, and maintenance (HP-UX and GNU/Linux), including:
+   - Campus Cluster
    - Metro Cluster
-   - Disaster Tolerant Cluster (or Continental cluster)
- * Kubernetes Administration
-   - RedHat OpenShift (OCPII certified)
-   - Rancher 2.5 and 2.6 (certified)
-   - Rancher Labs' k3s
- * In-depth knowledge on the following hardware platforms and Operating Systems:
-   - PA-RISC and IA64 (Hewlett-Packard), HP/UX  11.00, 11i, 11.23 and 11.31
-   - Linux 2.4, 2.6 and 3.x (IA32/64, AMD/Opteron, ec2 AWS)
-   - SPARC (SUN Microsystems), Solaris 6, 7, 8, 9 and 10
+   - Disaster Tolerant Cluster (Continental Cluster)
+ * Kubernetes Administration:
+   - Red Hat OpenShift (OCP certified)
+   - SUSE Rancher with RKE2 and k3s
+ * In-depth knowledge of the following hardware platforms and operating systems:
+   - PA-RISC and IA64 (Hewlett-Packard), HP-UX 11.00, 11i, 11.23 and 11.31
+   - Linux 4.x, 5.x and 6.x (IA32/64, AMD64, ARM, AWS EC2)
+   - SPARC (Sun/Oracle), Solaris 8, 9, 10 and 11
    - RS/6000 (IBM), AIX
-   - Intel (IA32,x86_64), Windows 2003/8, Solaris/x86, BSD UNIXes, Linux
-   - CISCO routers, Cisco IOS (basic configurations)
-   - HPs XP, HP 3Par and EVA storage boxes
-   - EMC2 storage boxes
+   - Intel (IA32, x86_64), Windows Server, BSD UNIXes
+   - Cisco routers and IOS (basic configurations)
+   - HP XP, HP 3PAR, and EVA storage
+   - EMC storage
    - VMware vSphere
- * Building software packages (including patch bundles) for HP-UX, Solaris and Linux
- * Implementing backup and restore solutions (Data Protector, Bareos, and many others)
- * Developing and/or implementing Security Policies
- * Implementing firewall software according Security Policies (Open Source solutions)
- * Support Services and Consultancy on [Relax and Recover (Rear)]({{ site.url }}/rear-support/)
-
+ * Building software packages (including patch bundles) for HP-UX, Solaris, and Linux
+ * Implementing backup and restore solutions (Data Protector, Bareos, and others)
+ * Developing and implementing security policies
+ * Implementing firewall software according to security policies (Open Source solutions)
+ * Support services and consultancy on [Relax-and-Recover (ReaR)]({{ site.url }}/rear-support/)
