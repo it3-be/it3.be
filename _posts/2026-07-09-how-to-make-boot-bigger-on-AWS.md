@@ -90,7 +90,7 @@ As you see in the above example device /dev/sdh is the same as /dev/nvme7n1.
 
 ### 3. Dump the root filesystem
 
-Mount the root partition and create a full XFS dump (use a traget filesystem with enough free space!):
+Mount the root partition and create a full XFS dump (use a target filesystem with enough free space!):
 
 ```bash
 mount /dev/sdh4 /mnt
