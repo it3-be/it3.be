@@ -124,7 +124,7 @@ A small word of advise: before applying patch bundles (or doing updates) make a 
 
 Related links:
 
-* [Create a Local Yum Repository](http://dotancohen.com/howto/yum_repo.html)
+* [Create a Local Yum Repository](https://dotancohen.com/howto/yum_repo.html)
 * [Source of httpserve.py](https://gist.github.com/ThomasChiroux/3786940)
 * [Relax-and-Recover (rear)](http://relax-and-recover.org/)
 

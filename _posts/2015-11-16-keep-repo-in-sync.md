@@ -51,7 +51,7 @@ Gratien
 
 Related links:
 
-* [Keeping your forked repo synced with the upstream source](http://2buntu.com/articles/1459/keeping-your-forked-repo-synced-with-the-upstream-source/)
+* [Keeping your forked repo synced with the upstream source](https://dev.to/jramnai/how-to-sync-your-forked-github-repository-with-the-upstream-repo-beginner-guide-14l3)
 * [Upstream source of ebiso at GitHub](https://github.com/gozora/ebiso)
 * [Gratien fork of ebiso](https://github.com/gdha/ebiso)
 

@@ -20,7 +20,7 @@ Well, to integrate `ebiso` with [Relax-and-Recover](http://relax-and-recover.org
 
     ISO_MKISOFS_BIN=/usr/bin/ebiso
 
-Be aware, that `ebiso` awareness into rear was introduced after the *rear-1.17.2* release, therefore, use the [development version of rear](http://download.opensuse.org/repositories/Archiving:/Backup:/Rear:/Snapshot/SLE_11_SP3/x86_64/) in case of SLES 11 SP3 or use `git clone git@github.com:rear/rear.git` to download the latest source tree of rear.
+Be aware, that `ebiso` awareness into rear was introduced after the *rear-1.17.2* release, therefore, use the [latest version of rear](https://github.com/rear/rear/releases/tag/release%2F2.9) in case of SLES 11 SP3 or use `git clone git@github.com:rear/rear.git` to download the latest source tree of rear.
 
 Thanks to `ebiso` and `rear` SAP HANA systems running on top of SuSe SLES 11 (or SLES 12) can be recovered - finally! No more legacy boot method needed - Yeah... 
 
