@@ -10,7 +10,7 @@ author: gratien
 
 <strong>How to mount an ISO image on HP-UX 11.31</strong>
 
-The easiest way to mount an ISO image as a normal file system on HP-UX 11.31 is by having *cdfs ISO image mount support* on the Operating System level. Therefore, install the free product ISOIMAGE-ENH (ISO Image mount Enhancement). The latest version of [ISOIMAGE-ENH](https://h20392.www2.hp.com/portal/swdepot/displayProductInfo.do?productNumber=ISOIMAGE-ENH) is available for free at the HP software download site.
+The easiest way to mount an ISO image as a normal file system on HP-UX 11.31 is by having *cdfs ISO image mount support* on the Operating System level. Therefore, install the free product ISOIMAGE-ENH (ISO Image mount Enhancement). The latest version of [ISOIMAGE-ENH](https://support.hpe.com/hpesc/public/docDisplay?docId=sf000075694en_us&docLocale=en_US) is available for free at the HP software download site.
 
 Because this product is delivered as a Dynamically Loadable Kernel Module (DLKM) named fspd, use the following commands to load and unload the fspd module after installing the depot: 
 

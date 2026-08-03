@@ -27,12 +27,11 @@ Thanks to `ebiso` and `rear` SAP HANA systems running on top of SuSe SLES 11 (or
 We hope you might find `ebiso` useful!
 
 
-Update: These days `ebiso` is not required anymore on SuSe SLES systems (2024).
+*Update*: These days `ebiso` is not required anymore on SuSe SLES systems (2024).
 
 Related links:
 
 * [ebiso wiki](https://github.com/gozora/ebiso/wiki)
 * [Source tree of ebiso at GitHub](https://github.com/gozora/ebiso)
 * [Gratien fork of ebiso](https://github.com/gdha/ebiso)
-* [ebiso RPMs to download for SuSe SLES11/12](http://download.opensuse.org/repositories/home:/gdha/)
 

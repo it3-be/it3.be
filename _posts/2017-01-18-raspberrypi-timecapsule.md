@@ -8,11 +8,13 @@ author: gratien
 
 <strong>Raspberry Pi timecapsule with Pidora Linux</strong>
 
+Update: Pidora is an old (and obsolete) Raspberry PI OS.
+
 After more then two years good service as timecapsule for my Macs we will refurbish the Raspberry Pi for some new tasks. We replace the timecapsule functionality with a brand new Synology NAS system.
 
 We just want to describe here briefly how we did the setup of the Raspberry Pi with Pidora Linux distribution and an external USB drive to capture the backups from the Macs. So, what do we need from hardware perspective? One Raspberry Pi, USB disk drive, an UTP network cable and power. Software needed is the [pidora linux distribution](http://pidora.ca/), but it can be any kind of Linux in my opinion.
 
-After installing pidora according the [instructions](https://wiki.cdot.senecacollege.ca/wiki/Pidora_Installation) we just need to tweak the configuration a bit to make it happen. First of all the external USB disk need to be connected and re-format it with parted in one big partition (Linux filesystem). We labeled it with a *gpt* disklabel (not *dos*). We formatted it with an *ext4* file system.
+After installing pidora according the [instructions](https://linux.softpedia.com/get/System/Operating-Systems/Linux-Distributions/Pidora-99559.shtml) we just need to tweak the configuration a bit to make it happen. First of all the external USB disk need to be connected and re-format it with parted in one big partition (Linux filesystem). We labeled it with a *gpt* disklabel (not *dos*). We formatted it with an *ext4* file system.
 
 Then mount it onto directory `/mnt/TimeCapsule`, which first must be created of course and added an entry in the `/etc/fstab` file:
 

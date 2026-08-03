@@ -28,6 +28,6 @@ Well, it seems not that difficult. The `knife` commands always searches the `$HO
 
 From that moment on there is no need anymore to append the `-c /etc/chef/client.rb` to any `knife` command. Great that saves me time!
 
-Another related post I found to very useful was [Configure Chef on Linux](https://www.bonusbits.com/wiki/HowTo:Configure_Knife_on_Linux)
+Another related post I found to very useful was [Using and configuring Chef on Ubuntu](https://www.scaleway.com/en/docs/tutorials/configure-chef-ubuntu-xenial/)
 
 Have fun, Gratien

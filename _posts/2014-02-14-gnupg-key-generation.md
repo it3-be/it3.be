@@ -111,6 +111,6 @@ And, then try to decrypt the above generated encrypted `BC-exec.gpg` file as
 
 Related links:
 
-* [Beginners Guide to GnuPG](http://ubuntuforums.org/showthread.php?t=680292)
+* [GnuPG for beginners](https://dev.to/govindup63/gpg-for-noobs-17od)
 * [GnuPrivacyGuardHowto](https://help.ubuntu.com/community/GnuPrivacyGuardHowto)
 
