@@ -91,3 +91,60 @@ footer .h4 { margin-bottom: 5px; }
 	padding: 10px 0 2px 0;
 	font-size: 14px;
 }
+
+@media (max-width: 767px) {
+	.navbar .brand {
+		margin-right: 0;
+		padding-left: 10px;
+	}
+
+	.navbar .btn-navbar {
+		margin-top: 16px;
+		margin-right: 10px;
+		padding: 8px 10px;
+	}
+
+	.navbar .nav {
+		float: none;
+		margin: 0;
+	}
+
+	.navbar .nav > li > a {
+		margin-top: 0;
+		padding: 12px 15px;
+		font-size: 16px;
+		line-height: 22px;
+		border-top: 1px solid #444;
+	}
+
+	.nav-collapse {
+		clear: both;
+		background-color: #303030;
+	}
+
+	.nav-collapse .nav > li:first-child > a {
+		border-top: 0;
+	}
+
+	.navbar .btn-navbar,
+	.navbar .nav > li > a,
+	.sidebar-nav .nav-list > li > a {
+		-webkit-tap-highlight-color: rgba(255, 255, 255, 0.2);
+		touch-action: manipulation;
+	}
+
+	.sidebar-nav .nav-list > li > a {
+		padding: 10px 15px;
+		font-size: 16px;
+		line-height: 22px;
+	}
+
+	.subheader .container {
+		padding: 10px 0;
+	}
+
+	.subheader img {
+		width: 100%;
+		height: auto;
+	}
+}
