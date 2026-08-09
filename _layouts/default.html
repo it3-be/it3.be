@@ -162,11 +162,17 @@
 			$(function () {
 				var navigationToggle = $('.btn-navbar[aria-controls="main-nav"]');
 				var mainNavigation = $('#main-nav');
+				var setExpandedState = function (isExpanded) {
+					navigationToggle.attr('aria-expanded', isExpanded ? 'true' : 'false');
+				};
+				navigationToggle.on('click', function () {
+					setExpandedState(navigationToggle.attr('aria-expanded') !== 'true');
+				});
 				mainNavigation.on('shown', function () {
-					navigationToggle.attr('aria-expanded', 'true');
+					setExpandedState(true);
 				});
 				mainNavigation.on('hidden', function () {
-					navigationToggle.attr('aria-expanded', 'false');
+					setExpandedState(false);
 				});
 			});
 		</script>
