@@ -162,10 +162,10 @@
 			$(function () {
 				var navigationToggle = $('.btn-navbar[aria-controls="main-nav"]');
 				var mainNavigation = $('#main-nav');
-				mainNavigation.on('show shown', function () {
+				mainNavigation.on('shown', function () {
 					navigationToggle.attr('aria-expanded', 'true');
 				});
-				mainNavigation.on('hide hidden', function () {
+				mainNavigation.on('hidden', function () {
 					navigationToggle.attr('aria-expanded', 'false');
 				});
 			});
