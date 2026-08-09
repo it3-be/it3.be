@@ -102,6 +102,8 @@ footer .h4 { margin-bottom: 5px; }
 		margin-top: 16px;
 		margin-right: 10px;
 		padding: 8px 10px;
+		-webkit-tap-highlight-color: rgba(255, 255, 255, 0.2);
+		touch-action: manipulation;
 	}
 
 	.navbar .nav {
@@ -121,11 +123,6 @@ footer .h4 { margin-bottom: 5px; }
 
 	.nav-collapse .nav > li:first-child > a {
 		border-top: 0;
-	}
-
-	.navbar .btn-navbar {
-		-webkit-tap-highlight-color: rgba(255, 255, 255, 0.2);
-		touch-action: manipulation;
 	}
 
 	.navbar .nav > li > a,
