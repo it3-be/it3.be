@@ -158,6 +158,18 @@
 
 		<script src="{{ site.url }}/js/jquery-1.9.1.js"></script>
 		<script src="{{ site.url }}/js/bootstrap.min.js"></script>
+		<script type="text/javascript">
+			$(function () {
+				var navigationToggle = $('.btn-navbar[aria-controls="main-nav"]');
+				var mainNavigation = $('#main-nav');
+				mainNavigation.on('show shown', function () {
+					navigationToggle.attr('aria-expanded', 'true');
+				});
+				mainNavigation.on('hide hidden', function () {
+					navigationToggle.attr('aria-expanded', 'false');
+				});
+			});
+		</script>
 		<script type="text/javascript" src="{{ site.url }}/js/ga_social_tracking.js"></script>
                 <!--
 		<script type="text/javascript" src="http://analytics-api-samples.googlecode.com/svn/trunk/src/tracking/javascript/v5/social/ga_social_tracking.js"></script>
