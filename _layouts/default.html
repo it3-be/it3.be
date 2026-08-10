@@ -48,15 +48,15 @@
 			<div class="navbar navbar-fixed-top">
 				<div class="navbar-inner">
 					<div class="container">
-						<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+						<button class="btn btn-navbar" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation menu">
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
-						</a>
+						</button>
 						<a class="brand header-brand" href="{{ site.url }}/" rel="home">
 							<img src="{{ site.url }}/images/logo/Rev_Logo_64x64x32.png" alt="IT3 Consultants">
 						</a>
-						<nav class="nav-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement">
+						<nav id="main-nav" class="nav-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement">
 							<ul class="nav">
 								<li><a href="{{ site.url }}/company/">Company</a></li>
 								<li><a href="{{ site.url }}/projects/">Projects</a></li>
@@ -158,6 +158,21 @@
 
 		<script src="{{ site.url }}/js/jquery-1.9.1.js"></script>
 		<script src="{{ site.url }}/js/bootstrap.min.js"></script>
+		<script type="text/javascript">
+			$(function () {
+				var navigationToggle = $('.btn-navbar[aria-controls="main-nav"]');
+				var mainNavigation = $('#main-nav');
+				var setExpandedState = function (isExpanded) {
+					navigationToggle.attr('aria-expanded', isExpanded ? 'true' : 'false');
+				};
+				mainNavigation.on('shown', function () {
+					setExpandedState(true);
+				});
+				mainNavigation.on('hidden', function () {
+					setExpandedState(false);
+				});
+			});
+		</script>
 		<script type="text/javascript" src="{{ site.url }}/js/ga_social_tracking.js"></script>
                 <!--
 		<script type="text/javascript" src="http://analytics-api-samples.googlecode.com/svn/trunk/src/tracking/javascript/v5/social/ga_social_tracking.js"></script>
