@@ -13,7 +13,7 @@ author: gratien
 On a new laptop with Ubuntu 18.04 Linux distribution we wish to install Relax-and-Recover (ReaR). We decided to use the stable version as provided by the ReaR maintainers, therefore, we created the following file:
 
     # cat /etc/apt/sources.list.d/rear-stable.list
-    deb [arch=amd64] http://download.opensuse.org/repositories/Archiving:/Backup:/Rear/xUbuntu_18.04/ /
+    deb [arch=amd64] https://download.opensuse.org/repositories/Archiving:/Backup:/Rear/xUbuntu_18.04/ /
 
 Then, run the `apt update` command to refresh the cache.
 
@@ -123,6 +123,6 @@ Alright, it seems to have worked fine this time. To test the ISO image we should
 
 References:
 
-[1] [Relax-and-Recover (ReaR)](http://relax-and-recover.org/)
+[1] [Relax-and-Recover (ReaR)](https://relax-and-recover.org/)
 
 [2] [Relax-and-Recover Professional Support](https://www.it3.be/rear-support/)

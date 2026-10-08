@@ -8,7 +8,7 @@ author: gratien
 
 If you are working with source projects or are dealing with lots of text files you sometimes need to find quickly the source or text file containing certain keyword. The easiest command is `grep` with the `-r` option for recursive which is available on Linux, but unfortunately the `-r` option of the `grep` is not available on HP-UX.
 
-As an example we take the [`cfg2html` project](http://www.cfg2html.com) which has it's source tree on [Github](https://github.com/cfg2html/cfg2html)
+As an example we take the [`cfg2html` project](https://www.cfg2html.com) which has it's source tree on [Github](https://github.com/cfg2html/cfg2html)
 
 We found an error with cfg2html on an HP-UX 11.11 system (`exec_command[66]: grepand_grep:  not found`) which we would like to trace back into the sources.
 

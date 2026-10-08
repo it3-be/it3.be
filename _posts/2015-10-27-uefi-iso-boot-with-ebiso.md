@@ -16,7 +16,7 @@ Finally, there is some good news! The project *ebiso* from Vladimir Gozora wrote
 
     # ebiso -R -o /tmp/bootable.iso -e boot/centos.img /tmp/bootdirfiles
 
-Well, to integrate `ebiso` with [Relax-and-Recover](http://relax-and-recover.org) you need to define in your `/etc/rear/local.conf` or `/etc/rear/site.conf` configuration file the following:
+Well, to integrate `ebiso` with [Relax-and-Recover](https://relax-and-recover.org) you need to define in your `/etc/rear/local.conf` or `/etc/rear/site.conf` configuration file the following:
 
     ISO_MKISOFS_BIN=/usr/bin/ebiso
 

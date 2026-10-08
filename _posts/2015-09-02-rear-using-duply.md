@@ -60,7 +60,7 @@ Now we think we have a working duplicity backup, right? Wrong, you better check 
     Using temporary directory /tmp/duplicity-X4ETex-tempdir
     --- Finished state OK at 15:19:50.907 - Runtime 00:00:00.891 ---
     
-So it seems we have a working duply setup. We can now configure relax-and-recover (rear) if it is installed of course. If not, you can [download it from the web](http://relax-and-recover.org/download/) 
+So it seems we have a working duply setup. We can now configure relax-and-recover (rear) if it is installed of course. If not, you can [download it from the web](https://relax-and-recover.org/download/) 
 The configuration we need to setup up so that rear works with duplicity (and duply) is as follow:
 
     # grep -v \# /etc/rear/site.conf | sed -e '/^$/d'

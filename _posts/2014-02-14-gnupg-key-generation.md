@@ -10,7 +10,7 @@ author: gratien
 
 <strong>How to generate GnuPG cryptographic keys with gpg</strong>
 
-[GNU Privacy Guard (GnuPG or GPG)](http://en.wikipedia.org/wiki/Gnupg) is a cryptographic program to generate encryption keys which can be used in any kind of program, such mail clients, instant messaging, or applications (duplicity). 
+[GNU Privacy Guard (GnuPG or GPG)](https://en.wikipedia.org/wiki/Gnupg) is a cryptographic program to generate encryption keys which can be used in any kind of program, such mail clients, instant messaging, or applications (duplicity). 
 
 We can use `gpg` to encrypt or decrypt plain files, but you could (and should) use it in combination with cloud based disaster recovery storage. The `duplicity` program is able to make use of this encryption keys.
 

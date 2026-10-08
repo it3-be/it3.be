@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: http://www.it3.be/sitemap.xml
+Sitemap: https://it3.be/sitemap.xml

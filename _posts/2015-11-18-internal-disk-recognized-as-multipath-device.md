@@ -146,5 +146,5 @@ Related links:
 
 * [Ignore local disk when generating multipath devices](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/DM_Multipath/ignore_localdisk_procedure.html)
 * [Setting up DM-Multipath Overview](https://help.ubuntu.com/lts/serverguide/multipath-setting-up-dm-multipath.html)
-* [Relax-and-Recover](http://relax-and-recover.org)
+* [Relax-and-Recover](https://relax-and-recover.org)
 

@@ -7,7 +7,7 @@ author: gratien
 ---
 <strong>Every time Fedora has a new release (twice a year) we need to build our Open Source packages for this. Over and over again I forget the basic steps.</strong>
 
-For example to build [rear](http://relax-and-recover.org) for Fedora 19 I need a branch for it in Fedora's git environment. Basically, I had the following:
+For example to build [rear](https://relax-and-recover.org) for Fedora 19 I need a branch for it in Fedora's git environment. Basically, I had the following:
 
     $ fedpkg switch-branch -l
     Locals:

@@ -8,9 +8,9 @@ author: gratien
 
 Sometimes we are unable to find a compiled executable on our particular Linux version. Under these circumstances it is better to download the latest source RPM (for Fedora, RedHat, Centos, SuSe based systems) and to build from the source RPM an executable.
 
-Here we will guide you through this process as a matter of example. Again, we use an example from one of our Open Source project [Make CD-ROM Recovery (mkCDrec)](http://mkcdrec.sourceforge.net) and in more particular ash which is a very small Bourne Shell used in the initial ramdisk of mkCDrec.
+Here we will guide you through this process as a matter of example. Again, we use an example from one of our Open Source project [Make CD-ROM Recovery (mkCDrec)](https://mkcdrec.sourceforge.net) and in more particular ash which is a very small Bourne Shell used in the initial ramdisk of mkCDrec.
 
-We normally use [RPM finder](http://rpmfind.net/) to find the latest source rpm of ash -  in our case it was `ash-0.3.8-20`. We download the rpm and save it in /tmp for example.
+We normally use [RPM finder](https://rpmfind.net/) to find the latest source rpm of ash -  in our case it was `ash-0.3.8-20`. We download the rpm and save it in /tmp for example.
 
 A plain user ( non-root ) can unpack the source RPM under his home directory as follow:
 

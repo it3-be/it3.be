@@ -82,4 +82,4 @@ To test it we introduce a script starting with 2 digits.
 
 References:
 
-* [Relax-and-Recover Release Notes 2.00](http://relax-and-recover.org/documentation/release-notes-2-00)
+* [Relax-and-Recover Release Notes 2.00](https://relax-and-recover.org/documentation/release-notes-2-00)

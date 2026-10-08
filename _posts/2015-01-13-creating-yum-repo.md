@@ -65,8 +65,8 @@ We have a directory ready now with all the RPMs including the repo XML definitio
     $ sudo vi /etc/yum.repos.d/CentOS-Updates-Jan-2015.repo
     [Updates-Jan-2015]
     name=CentOS $releasever - $basearch - Released Updates Jan 2015
-    baseurl=http://127.0.0.1:80/var/html/repo-jan-2015/
-    #baseurl=http://localhost/var/html/repo-jan-2015/
+    baseurl=https://127.0.0.1:80/var/html/repo-jan-2015/
+    #baseurl=https://localhost/var/html/repo-jan-2015/
     enabled=1     # make it 0 when no local httpd is running
     gpgcheck=1
 
@@ -126,5 +126,5 @@ Related links:
 
 * [Create a Local Yum Repository](https://dotancohen.com/howto/yum_repo.html)
 * [Source of httpserve.py](https://gist.github.com/ThomasChiroux/3786940)
-* [Relax-and-Recover (rear)](http://relax-and-recover.org/)
+* [Relax-and-Recover (rear)](https://relax-and-recover.org/)
 

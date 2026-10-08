@@ -89,4 +89,4 @@ Finally, we come to the reason why we wrote this short blog is signing a RPM:
     Signature   : RSA/SHA1, Wed 25 Oct 2017 06:13:59 PM CEST, Key ID 9ad6bf40b34ac2bf
 
 
-Reference: [Create a yum repository with custom GPG-signed RPM packages](http://linuxsysconfig.com/2013/04/create-a-yum-repository-with-custom-gpg-signed-packages/)
+Reference: [Create a yum repository with custom GPG-signed RPM packages](https://linuxsysconfig.com/2013/04/create-a-yum-repository-with-custom-gpg-signed-packages/)

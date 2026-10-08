@@ -39,7 +39,7 @@ A last command to force an unmount is:
 
     /sbin/fs/vxfs/vxumount -o force /opr_oracle
 
-If all above did not help at help to resolve the start-up of the package then you probably hit the issue mentioned in article: <a href="http://www.symantec.com/business/support/index?page=content&amp;id=TECH125050">Unable mount files system. error v-3-21264</a>. To fix the issue execute the following set of commands:
+If all above did not help at help to resolve the start-up of the package then you probably hit the issue mentioned in article: <a href="https://www.symantec.com/business/support/index?page=content&amp;id=TECH125050">Unable mount files system. error v-3-21264</a>. To fix the issue execute the following set of commands:
 
     # ls /opr_oracle
     # rmdir /opr_oracle

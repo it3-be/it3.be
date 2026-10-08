@@ -12,7 +12,7 @@ author: gratien
 
 Making a disaster recovery image of your Linux system to an USB device is quite handy as you can store this USB device (or stick) to an external safe (or whatever). Furthermore, it is also one of the simplest configuration set-ups with Relax-and-Recover (ReaR).
 
-It is of course important that ReaR itself is installed, or via the Linux distribution repositories (if in there like it is with SuSe and Red Hat), or via the ReaR project [Download pages](http://relax-and-recover.org/download/).
+It is of course important that ReaR itself is installed, or via the Linux distribution repositories (if in there like it is with SuSe and Red Hat), or via the ReaR project [Download pages](https://relax-and-recover.org/download/).
 
 Secondly, the USB device need to be inserted the system, and when it is the first time used with ReaR itself it needed to be formatted. Be aware, that formatting will wipe all previous content of this USB device - so think twice!
 
@@ -65,4 +65,4 @@ Now, try again with the command `rear -v mkbackup` and now it works fine. After 
 
 ## References
 
- - [Relax-and-Recover](http://relax-and-recover.org/)
+ - [Relax-and-Recover](https://relax-and-recover.org/)

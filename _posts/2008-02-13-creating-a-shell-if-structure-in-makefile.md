@@ -7,7 +7,7 @@ author: gratien
 ---
 <strong>Did you ever wonder how to make a shell if structure in a Makefile?</strong>
 
-Suppose the following (taken from the Open Source project [Make CD-ROM Recovery](http://mkcdrec.sourceforge.net/)):
+Suppose the following (taken from the Open Source project [Make CD-ROM Recovery](https://mkcdrec.sourceforge.net/)):
 
 If the local configuration file `/etc/mkcdrec.conf` exists then check some local variable first instead of the global configuration file `Config.sh`.
 

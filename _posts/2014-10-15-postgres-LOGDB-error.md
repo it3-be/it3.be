@@ -34,6 +34,6 @@ Also, check the `/var/opt/sfm/log/sfm.log` log file again; the errors should not
 
 Related links:
 
-* [WBEMextras home page](http://wbemextras.github.io/)
+* [WBEMextras home page](https://wbemextras.github.io/)
 * [WBEMextras GitHub source](https://github.com/WBEMextras/WBEMextras)
 
