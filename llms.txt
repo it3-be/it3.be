@@ -1,0 +1,41 @@
+# IT3 Consultants
+
+> IT3 Consultants is a Belgian IT consultancy founded by Gratien D'haese,
+> specializing in Linux/Unix infrastructure, disaster recovery, and open-source
+> software. It is the home of Relax-and-Recover (ReaR), the leading open-source
+> bare-metal disaster recovery framework for Linux, and cfg2html.
+
+## Company
+
+- [Company](https://it3.be/company/): About IT3 Consultants, services and expertise
+- [About](https://it3.be/about/): Background on Gratien D'haese and the company
+- [Contact](https://it3.be/contact/): Contact information (info@it3.be)
+- [Privacy](https://it3.be/privacy/): Privacy policy
+
+## Open Source Projects
+
+- [Projects overview](https://it3.be/projects/): All open-source projects
+- [Relax-and-Recover (ReaR)](https://it3.be/projects/rear/): Linux bare-metal disaster recovery and system migration framework
+- [ReaR User Guide](https://it3.be/projects/rear-user-guide/): Official user documentation for ReaR
+- [ReaR Automated Testing](https://it3.be/projects/rear-automated-testing/): Automated testing setup for ReaR
+- [ReaR Support](https://it3.be/rear-support/index.html): Commercial support options for ReaR
+- [cfg2html](https://it3.be/projects/cfg2html/): System configuration documentation collector for Linux/HP-UX
+- [Upgrade-UX](https://it3.be/projects/upgrade-ux/): Framework to upgrade and patch Unix systems
+- [GitHub](https://github.com/gdha): Source code repositories
+
+## Blog
+
+- [Blog](https://it3.be/blog/): Technical articles on Linux, ReaR, DevOps and infrastructure
+
+### Recent articles
+
+- [How to make /boot bigger on AWS](https://it3.be/2026/07/09/how-to-make-boot-bigger-on-AWS/)
+- [Convert ext3 to ext4](https://it3.be/2026/06/18/convert-ext3-to-ext4/)
+- [Ubuntu GRUB EFI amd64 signed](https://it3.be/2026/02/27/ubuntu-grub-efi-amd64-signed/)
+- [CPU x86-64-v levels](https://it3.be/2025/04/04/cpux86-64-v/)
+- [Python requirements](https://it3.be/2024/09/16/python-requirements/)
+
+## Optional
+
+- [Sitemap](https://it3.be/sitemap.xml): Full list of pages and blog posts
+
