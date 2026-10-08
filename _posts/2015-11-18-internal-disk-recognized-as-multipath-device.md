@@ -86,7 +86,7 @@ As we can see the first WWID listed in the `/etc/multipath/wwids` file is from /
 
 To resolve this we must remove the first line in `/etc/multipath/wwids` file and rebuild the kernel (in our case this was a SLES 11 SP3 system).
 
-It is a good practive to make a copy of the original file:
+It is a good practice to make a copy of the original file:
 
     # cp -p /etc/multipath/wwids /root/wwids.$(date '+%d-%B-%Y')
     # ll /root/wwid*
